@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Principe del Pacifico — Apartments in Playa Santa Teresa, Costa Rica</title>
+<meta name="description" content="Beautiful apartments 100m from the beach in Playa Santa Teresa, Costa Rica. Pool, fiber optic WiFi, daily cleaning. Book direct and save $15–24/night vs Expedia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/sections.css">
+<link rel="stylesheet" href="css/cards.css">
+<link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+<!-- ═══ MOBILE MENU DRAWER ═══ -->
+<div class="mobile-menu" id="mmenu" aria-hidden="true" role="dialog" aria-label="Navigazione principale">
+  <a href="#apts" class="nm" onclick="closeMobile()">Appartamenti</a>
+  <a href="#loc" class="nm" onclick="closeMobile()">Posizione</a>
+  <a href="#rev" class="nm" onclick="closeMobile()">Recensioni</a>
+  <a href="#owners" class="nm" onclick="closeMobile()">Contatti</a>
+  <a href="#apts" class="nm ncta" onclick="closeMobile()">Prenota ora</a>
+</div>
+
+<!-- ═══ HEADER ═══ -->
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <div class="hdr-inner">
+      <a href="#top" class="logo">
+        <span class="logo-main">Principe del Pacifico</span>
+        <span class="logo-sub">Playa Santa Teresa · Costa Rica</span>
+      </a>
+      <nav class="nav" role="navigation" aria-label="Menu principale">
+        <a href="#apts" class="nl">Appartamenti</a>
+        <a href="#loc" class="nl">Posizione</a>
+        <a href="#rev" class="nl">Recensioni</a>
+        <a href="#owners" class="nl">Contatti</a>
+        <a href="#apts" class="ncta">Prenota ora</a>
+      </nav>
+      <button class="hamburger" id="ham" aria-label="Apri menu" aria-expanded="false" onclick="toggleMobile()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+
+  <!-- Botanical SVG decoration -->
+  <svg class="hero-bot" viewBox="0 0 200 260" fill="none" aria-hidden="true">
+    <path d="M100 260C100 185,54 150,18 75" stroke="white" stroke-width="1.5"/>
+    <path d="M100 260C100 185,146 150,182 75" stroke="white" stroke-width="1.5"/>
+    <path d="M100 225C74 198,36 178,9 142" stroke="white" stroke-width="1"/>
+    <path d="M100 225C126 198,164 178,191 142" stroke="white" stroke-width="1"/>
+    <path d="M100 190C66 172,28 154,4 116" stroke="white" stroke-width=".8"/>
+    <path d="M100 190C134 172,172 154,196 116" stroke="white" stroke-width=".8"/>
+    <circle cx="18" cy="73" r="3.5" fill="white"/>
+    <circle cx="182" cy="73" r="3.5" fill="white"/>
+    <circle cx="9" cy="140" r="2.5" fill="white"/>
+    <circle cx="191" cy="140" r="2.5" fill="white"/>
+  </svg>
+
+  <div class="hero-shape"></div>
+
+  <div class="wrap">
+    <div class="hero-content" id="top-anchor">
+      <div class="eyebrow">7 appartamenti · Playa Santa Teresa</div>
+
+      <h1 class="h1">Il Pacifico<br><em>è casa tua</em></h1>
+
+      <p class="hdesc">
+        Appartamenti con piscina a 100m dalla spiaggia.
+        Fibra 100MB, pulizia giornaliera, parcheggio gratuito.
+        Gestiti da Christian e Rossella.
+      </p>
+
+      <div class="pills" role="list">
+        <span class="pill" role="listitem"><span class="pill-dot"></span>100m dalla spiaggia</span>
+        <span class="pill" role="listitem"><span class="pill-dot"></span>Piscina condivisa</span>
+        <span class="pill" role="listitem"><span class="pill-dot"></span>Fibra 100MB</span>
+        <span class="pill" role="listitem"><span class="pill-dot"></span>Parcheggio gratuito</span>
+        <span class="pill" role="listitem"><span class="pill-dot"></span>Da $140/notte</span>
+      </div>
+
+      <!-- Search Widget -->
+      <div class="sw-wrap">
+        <form class="sw" id="sf" onsubmit="handleSearch(event)" novalidate>
+          <div class="sf" id="sf-ci">
+            <label class="slabel" for="ci">Check-in</label>
+            <input class="sinput" id="ci" type="date" aria-label="Data check-in">
+          </div>
+          <div class="sf-sep" aria-hidden="true"></div>
+          <div class="sf" id="sf-co">
+            <label class="slabel" for="co">Check-out</label>
+            <input class="sinput" id="co" type="date" aria-label="Data check-out">
+          </div>
+          <div class="sf-sep" aria-hidden="true"></div>
+          <div class="sf">
+            <label class="slabel" for="gu">Ospiti</label>
+            <select class="sinput" id="gu" aria-label="Numero ospiti">
+              <option value="1">1 ospite</option>
+              <option value="2" selected>2 ospiti</option>
+              <option value="3">3 ospiti</option>
+              <option value="4">4 ospiti</option>
+              <option value="5">5 ospiti</option>
+            </select>
+          </div>
+          <button type="submit" class="sbtn" aria-label="Cerca disponibilità">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+            Cerca
+          </button>
+        </form>
+        <p class="snote">✓ Prenota diretto — $15–24/notte meno di Expedia</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST BAR ═══ -->
+<!-- SVG defs for half-star gradient (used by all star components on page) -->
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+  <defs>
+    <linearGradient id="half-grad" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="50%" stop-color="#C49A7A"/>
+      <stop offset="50%" stop-color="#D4CFC8"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<div class="trust-sec" role="region" aria-label="Valutazioni ospiti">
+  <div class="wrap">
+    <div class="trust-in">
+
+      <div class="ti">
+        <div class="t-stars" aria-label="4.5 stelle su 5">
+          <!-- 4 full stars + 1 half star -->
+          <svg class="t-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="t-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="t-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="t-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="t-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-half" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        </div>
+        <div>
+          <div class="t-score">4.5<span class="t-score-den">/5</span></div>
+          <div class="t-lbl">80 recensioni · Google Maps</div>
+        </div>
+      </div>
+
+      <div class="t-sep" aria-hidden="true"></div>
+
+      <div class="ti">
+        <div>
+          <div class="t-score t-score-green">8.6<span class="t-score-den">/10</span></div>
+          <div class="t-lbl">Excellent · 68 rec. Expedia</div>
+        </div>
+      </div>
+
+      <div class="t-sep" aria-hidden="true"></div>
+
+      <div class="ti t-quote-wrap">
+        <blockquote>
+          <p class="t-quote">"It truly felt like my own apartment after a couple days."</p>
+          <footer class="t-auth">Courtney Parker — USA · Google, Feb 2026</footer>
+        </blockquote>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══ VALUE BAR ═══ -->
+<div class="vbar" role="region" aria-label="Vantaggi prenotazione diretta">
+  <div class="wrap">
+    <div class="vgrid">
+
+      <div class="vi">
+        <div class="v-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div>
+          <div class="v-title">Miglior prezzo garantito</div>
+          <div class="v-sub">$15–24/notte meno di Expedia prenotando qui</div>
+        </div>
+      </div>
+
+      <div class="vi">
+        <div class="v-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </div>
+        <div>
+          <div class="v-title">Contatto diretto con i proprietari</div>
+          <div class="v-sub">Christian e Rossella rispondono personalmente</div>
+        </div>
+      </div>
+
+      <div class="vi">
+        <div class="v-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h5l2 3v4h-7V8z"/>
+            <circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+        <div>
+          <div class="v-title">Parcheggio gratuito incluso</div>
+          <div class="v-sub">Self-parking sicuro — raro nell'area di Santa Teresa</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ═══ APARTMENTS ═══ -->
+<section class="sec" id="apts">
+  <div class="wrap">
+    <div class="sec-ey">I nostri appartamenti</div>
+    <h2 class="sec-h2">Sette spazi,<br><em>un'unica anima</em></h2>
+    <p class="sec-desc">Ogni appartamento ha carattere proprio. Tutti con piscina, fibra ottica e pulizia giornaliera.</p>
+    <p class="sec-price-note">I prezzi mostrati sono indicativi. Inserisci le date per il prezzo esatto.</p>
+
+    <div class="apt-grid">
+
+      <!-- MASTER — featured (span 2) -->
+      <article class="apt-card apt-featured" aria-label="Appartamento Master">
+        <div class="apt-img">
+          <!--
+            TODO: Sostituire il gradiente con la foto reale prima del lancio.
+            <img src="img/apt/master-1.jpg" alt="Master apartment — soggiorno e cucina open space" class="real-photo" loading="lazy">
+          -->
+          <div class="apt-img-inner bg-master">
+            <div class="apt-lbg" aria-hidden="true">Master</div>
+            <div class="apt-ov"></div>
+          </div>
+          <span class="apt-img-todo" aria-hidden="true">📷 Foto da aggiungere</span>
+          <div class="apt-badge">
+            <span class="badge badge-sand">Top di gamma</span>
+          </div>
+        </div>
+        <div class="apt-body">
+          <div>
+            <h3 class="apt-name">Master</h3>
+            <p class="apt-diff">Unico con 2 bagni · ingresso indipendente · duplex su 2 piani</p>
+          </div>
+          <p class="apt-specs">140 mq · 5 ospiti · 2 bagni · Secondo piano<br>1 King + 2 Queen · Grande balcone privato</p>
+          <div class="apt-foot">
+            <div class="apt-price-wrap">
+              <span class="apt-pfrom">da</span>
+              <div class="apt-price">$240<span class="apt-per">/notte</span></div>
+            </div>
+            <a href="pages/master.html" class="apt-link">
+              Vedi appartamento
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- WHITE -->
+      <article class="apt-card" aria-label="Appartamento White">
+        <div class="apt-img">
+          <!-- TODO: <img src="img/apt/white-1.jpg" alt="White apartment — patio con vista piscina" class="real-photo" loading="lazy"> -->
+          <div class="apt-img-inner bg-white-apt">
+            <div class="apt-lbg" aria-hidden="true">White</div>
+            <div class="apt-ov"></div>
+          </div>
+          <span class="apt-img-todo" aria-hidden="true">📷 Foto da aggiungere</span>
+        </div>
+        <div class="apt-body">
+          <div>
+            <h3 class="apt-name">White</h3>
+            <p class="apt-diff">Piano terra · davanti alla piscina · senza scale</p>
+          </div>
+          <p class="apt-specs">60 mq · 4 ospiti · 1 bagno<br>1 King + 2 Twin · Patio privato</p>
+          <div class="apt-foot">
+            <div class="apt-price-wrap">
+              <span class="apt-pfrom">da</span>
+              <div class="apt-price">$220<span class="apt-per">/notte</span></div>
+            </div>
+            <a href="pages/white.html" class="apt-link">Vedi <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- BLUE -->
+      <article class="apt-card" aria-label="Appartamento Blue — accessibile">
+        <div class="apt-img">
+          <!-- TODO: <img src="img/apt/blue-1.jpg" alt="Blue studio — camera con letto king size" class="real-photo" loading="lazy"> -->
+          <div class="apt-img-inner bg-blue">
+            <div class="apt-lbg" aria-hidden="true">Blue</div>
+            <div class="apt-ov"></div>
+          </div>
+          <span class="apt-img-todo" aria-hidden="true">📷 Foto da aggiungere</span>
+          <div class="apt-badge">
+            <span class="badge badge-forest">Accessibile</span>
+          </div>
+        </div>
+        <div class="apt-body">
+          <div>
+            <h3 class="apt-name">Blue</h3>
+            <p class="apt-diff">Unico accessibile · doccia accessibile · porte larghe</p>
+          </div>
+          <p class="apt-specs">30 mq · 3 ospiti · 1 bagno<br>1 King + 1 Twin · Patio privato</p>
+          <div class="apt-foot">
+            <div class="apt-price-wrap">
+              <span class="apt-pfrom">da</span>
+              <div class="apt-price">$140<span class="apt-per">/notte</span></div>
+            </div>
+            <a href="pages/blue.html" class="apt-link">Vedi <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- RED -->
+      <article class="apt-card" aria-label="Appartamento Red — remote work">
+        <div class="apt-img">
+          <!-- TODO: <img src="img/apt/red-1.jpg" alt="Red duplex — living con scrivania remote work" class="real-photo" loading="lazy"> -->
+          <div class="apt-img-inner bg-red">
+            <div class="apt-lbg" aria-hidden="true">Red</div>
+            <div class="apt-ov"></div>
+          </div>
+          <span class="apt-img-todo" aria-hidden="true">📷 Foto da aggiungere</span>
+          <div class="apt-badge">
+            <span class="badge badge-earth">Remote work</span>
+          </div>
+        </div>
+        <div class="apt-body">
+          <div>
+            <h3 class="apt-name">Red</h3>
+            <p class="apt-diff">Scrivania dedicata · duplex con soppalco · balcone</p>
+          </div>
+          <p class="apt-specs">45 mq · 3 ospiti · 1 bagno<br>1 Queen + 1 Twin · Balcone privato</p>
+          <div class="apt-foot">
+            <div class="apt-price-wrap">
+              <span class="apt-pfrom">da</span>
+              <div class="apt-price">$160<span class="apt-per">/notte</span></div>
+            </div>
+            <a href="pages/red.html" class="apt-link">Vedi <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- GREEN -->
+      <article class="apt-card" aria-label="Appartamento Green">
+        <div class="apt-img">
+          <!-- TODO: <img src="img/apt/green-1.jpg" alt="Green loft — zona giorno con soppalco" class="real-photo" loading="lazy"> -->
+          <div class="apt-img-inner bg-green">
+            <div class="apt-lbg" aria-hidden="true">Green</div>
+            <div class="apt-ov"></div>
+          </div>
+          <span class="apt-img-todo" aria-hidden="true">📷 Foto da aggiungere</span>
+        </div>
+        <div class="apt-body">
+          <div>
+            <h3 class="apt-name">Green</h3>
+            <p class="apt-diff">Loft duplex con soppalco · vista piscina · 4 ospiti</p>
+          </div>
+          <p class="apt-specs">45 mq · 4 ospiti · 1 bagno<br>1 Queen + 2 Twin · Balcone privato</p>
+          <div class="apt-foot">
+            <div class="apt-price-wrap">
+              <span class="apt-pfrom">da</span>
+              <div class="apt-price">$190<span class="apt-per">/notte</span></div>
+            </div>
+            <a href="pages/green.html" class="apt-link">Vedi <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- TORA -->
+      <article class="apt-card" aria-label="Appartamento Tora">
+        <div class="apt-img">
+          <!-- TODO: <img src="img/apt/tora-1.jpg" alt="Tora studio — struttura separata con patio" class="real-photo" loading="lazy"> -->
+          <div class="apt-img-inner bg-tora">
+            <div class="apt-lbg" aria-hidden="true">Tora</div>
+            <div class="apt-ov"></div>
+          </div>
+          <span class="apt-img-todo" aria-hidden="true">📷 Foto da aggiungere</span>
+        </div>
+        <div class="apt-body">
+          <div>
+            <h3 class="apt-name">Tora</h3>
+            <p class="apt-diff">Struttura separata · privacy totale · piccolo patio</p>
+          </div>
+          <p class="apt-specs">25 mq · 3 ospiti · 1 bagno<br>1 King + 1 Twin · Struttura indipendente</p>
+          <div class="apt-foot">
+            <div class="apt-price-wrap">
+              <span class="apt-pfrom">da</span>
+              <div class="apt-price">$160<span class="apt-per">/notte</span></div>
+            </div>
+            <a href="pages/tora.html" class="apt-link">Vedi <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- BROWN -->
+      <article class="apt-card" aria-label="Appartamento Brown">
+        <div class="apt-img">
+          <!-- TODO: <img src="img/apt/brown-1.jpg" alt="Brown apartment — giardino privato" class="real-photo" loading="lazy"> -->
+          <div class="apt-img-inner bg-brown">
+            <div class="apt-lbg" aria-hidden="true">Brown</div>
+            <div class="apt-ov"></div>
+          </div>
+          <span class="apt-img-todo" aria-hidden="true">📷 Foto da aggiungere</span>
+        </div>
+        <div class="apt-body">
+          <div>
+            <h3 class="apt-name">Brown</h3>
+            <p class="apt-diff">Giardino privato · ingresso sul retro · piano terra</p>
+          </div>
+          <p class="apt-specs">40 mq · 3 ospiti · 1 bagno<br>1 King + 1 Twin · Giardino privato</p>
+          <div class="apt-foot">
+            <div class="apt-price-wrap">
+              <span class="apt-pfrom">da</span>
+              <div class="apt-price">$150<span class="apt-per">/notte</span></div>
+            </div>
+            <a href="pages/brown.html" class="apt-link">Vedi <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REVIEWS ═══ -->
+<section class="sec sec-alt" id="rev">
+  <div class="wrap">
+    <div class="sec-ey">Ospiti verificati</div>
+    <h2 class="sec-h2">Quello che dicono<br><em>i nostri ospiti</em></h2>
+
+    <div class="rev-grid">
+
+      <article class="rev-card">
+        <div class="rev-stars-row" aria-label="5 stelle su 5">
+          <svg class="rev-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="rev-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="rev-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="rev-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="rev-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        </div>
+        <blockquote class="rev-text">"The owners were super helpful and responsive. It truly felt like my own apartment after a couple days."</blockquote>
+        <div class="rev-foot">
+          <div><div class="rev-name">Courtney Parker</div><div class="rev-meta">Solo · 2 settimane · Feb 2026</div></div>
+          <span class="rev-src">Google</span>
+        </div>
+      </article>
+
+      <article class="rev-card">
+        <div class="rev-stars-row" aria-label="5 stelle su 5">
+          <svg class="rev-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="rev-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="rev-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="rev-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="rev-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        </div>
+        <blockquote class="rev-text">"Christian helped us feeling welcome and at home. He knows Santa Teresa very well — ask him for some hidden gems!"</blockquote>
+        <div class="rev-foot">
+          <div><div class="rev-name">Koray</div><div class="rev-meta">Coppia · Gen 2026</div></div>
+          <span class="rev-src">Google</span>
+        </div>
+      </article>
+
+      <article class="rev-card">
+        <div class="rev-stars-row" aria-label="5 stelle su 5">
+          <svg class="rev-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="rev-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="rev-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="rev-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg class="rev-star" viewBox="0 0 24 24" aria-hidden="true"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        </div>
+        <blockquote class="rev-text">"We moved from another hotel — best decision. Rossella helped us check-in early. Christian was always around."</blockquote>
+        <div class="rev-foot">
+          <div><div class="rev-name">Joy</div><div class="rev-meta">Gen 2026</div></div>
+          <span class="rev-src">Google</span>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="rating-row" role="region" aria-label="Riepilogo valutazioni">
+      <div class="rating-it">
+        <div class="rating-big">4.5</div>
+        <div class="rating-stars-svg" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon class="star-full" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24"><polygon class="star-half" points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+        </div>
+        <div class="rating-plat">Google Maps</div>
+        <div class="rating-cnt">80 recensioni verificate</div>
+      </div>
+      <div class="rating-sep" aria-hidden="true"></div>
+      <div class="rating-it">
+        <div class="rating-big rating-big-green">8.6</div>
+        <div class="rating-plat">Expedia · Excellent</div>
+        <div class="rating-cnt">68 recensioni verificate</div>
+      </div>
+      <div class="rating-sep" aria-hidden="true"></div>
+      <div class="rating-highlights">
+        <blockquote class="rating-quote">"Loved by couples" · "Top rated beach location" · "Culinary delights nearby"</blockquote>
+        <p class="rating-source">Expedia highlights · Apr 2026</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ LOCATION ═══ -->
+<section class="sec" id="loc">
+  <div class="wrap">
+    <div class="sec-ey">Dove siamo</div>
+    <h2 class="sec-h2">A 100 metri<br><em>dalla spiaggia</em></h2>
+    <div class="loc-grid">
+
+      <div class="loc-facts">
+        <p class="sec-desc" style="margin-bottom:24px;">
+          Calle Castillo, sulla strada principale di Playa Santa Teresa.
+          Ristoranti, surf spot e negozi a piedi. Auto non necessaria.
+        </p>
+        <div class="lf">
+          <div class="lf-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div><div class="lf-title">100m dalla spiaggia</div><div class="lf-desc">Playa Santa Teresa e surf spot La Lora a 2 minuti a piedi</div></div>
+        </div>
+        <div class="lf">
+          <div class="lf-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div><div class="lf-title">Posizione centrale</div><div class="lf-desc">Bar, ristoranti, yoga e negozi entro 5 minuti a piedi</div></div>
+        </div>
+        <div class="lf">
+          <div class="lf-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div><div class="lf-title">Aeroporto Tambor TMU</div><div class="lf-desc">56 minuti in auto · shuttle disponibile su richiesta</div></div>
+        </div>
+      </div>
+
+      <div class="loc-map">
+        <!--
+          TODO PRODUZIONE — sostituire con iframe reale prima del lancio.
+
+          OPZIONE A — con Google Maps API key:
+          <iframe
+            src="https://www.google.com/maps/embed/v1/place?key=TUA_API_KEY&q=Principe+del+Pacifico,Santa+Teresa,Costa+Rica&zoom=16"
+            width="100%" height="340" style="border:0;border-radius:20px;"
+            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Posizione Principe del Pacifico su Google Maps">
+          </iframe>
+
+          OPZIONE B — embed senza API key (funziona per embed statici):
+          <iframe
+            src="https://maps.google.com/maps?q=9.644347,-85.1696728&z=16&output=embed"
+            width="100%" height="340" style="border:0;border-radius:20px;"
+            allowfullscreen loading="lazy"
+            title="Posizione Principe del Pacifico su Google Maps">
+          </iframe>
+        -->
+        <div class="loc-map-fallback">
+          <div class="loc-pin" aria-hidden="true"></div>
+          <p class="loc-lbl">Principe del Pacifico</p>
+          <p class="loc-lbl-sub">Calle Castillo, Playa Santa Teresa · Costa Rica</p>
+          <a href="https://www.google.com/maps/place/Principe+del+Pacifico/@9.644347,-85.1696728,17z"
+             target="_blank" rel="noopener noreferrer" class="loc-map-open">
+            Apri in Google Maps →
+          </a>
+          <span class="loc-map-todo">⚠️ TODO: sostituire con iframe Google Maps</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OWNERS ═══ -->
+<section class="owners" id="owners">
+  <div class="wrap">
+    <div class="owners-in">
+
+      <div class="owners-left">
+        <div class="o-avatar-wrap">
+          <!--
+            TODO: Aggiungere foto reale di Christian e Rossella prima del lancio.
+            <img src="img/owners/christian-rossella.jpg"
+                 alt="Christian e Rossella, proprietari di Principe del Pacifico"
+                 class="o-avatar-img">
+          -->
+          <div class="o-avatar-placeholder" aria-hidden="true">C&R</div>
+          <p class="o-photo-todo">⚠️ TODO: aggiungere foto dei proprietari</p>
+        </div>
+
+        <div class="o-ey">I proprietari</div>
+        <h2 class="o-h2">Christian<br>e <em>Rossella</em></h2>
+        <p class="o-text">
+          Siamo una coppia italiana innamorata di Santa Teresa.
+          Gestiamo personalmente ogni appartamento e siamo sempre
+          disponibili — per un consiglio sul surf, un ristorante
+          nascosto o qualsiasi necessità.
+        </p>
+        <address class="o-contacts">
+          <a href="mailto:reservation@principedelpacifico.com" class="oc">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            reservation@principedelpacifico.com
+          </a>
+          <a href="tel:+50687710567" class="oc">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
+            +506 877 10567
+          </a>
+        </address>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><div class="stat-n">7<em> apt</em></div><div class="stat-l">Appartamenti gestiti direttamente</div></div>
+        <div class="stat"><div class="stat-n">4.5<em>★</em></div><div class="stat-l">Rating Google · 80 recensioni</div></div>
+        <div class="stat"><div class="stat-n">100<em>m</em></div><div class="stat-l">Dalla spiaggia di Santa Teresa</div></div>
+        <div class="stat"><div class="stat-n">8.6<em>/10</em></div><div class="stat-l">Excellent su Expedia · 68 rec.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer" role="contentinfo">
+  <div class="wrap">
+    <div class="fg">
+      <div class="footer-brand">
+        <span class="fb-name">Principe del Pacifico</span>
+        <span class="fb-loc">Playa Santa Teresa · Costa Rica</span>
+        <p class="fb-desc">Appartamenti con piscina a 100m dalla spiaggia. Prenotando direttamente hai il prezzo migliore garantito.</p>
+      </div>
+      <div>
+        <div class="fc-title">Appartamenti</div>
+        <nav class="fc-links" aria-label="Link appartamenti">
+          <a href="pages/master.html" class="fcl">Master</a>
+          <a href="pages/white.html" class="fcl">White</a>
+          <a href="pages/blue.html" class="fcl">Blue</a>
+          <a href="pages/red.html" class="fcl">Red</a>
+          <a href="pages/green.html" class="fcl">Green</a>
+          <a href="pages/tora.html" class="fcl">Tora</a>
+          <a href="pages/brown.html" class="fcl">Brown</a>
+        </nav>
+      </div>
+      <div>
+        <div class="fc-title">Info</div>
+        <nav class="fc-links" aria-label="Link info">
+          <a href="#loc" class="fcl">Dove siamo</a>
+          <a href="#rev" class="fcl">Recensioni</a>
+          <a href="pages/promozioni.html" class="fcl">Promozioni</a>
+          <a href="pages/blog.html" class="fcl">Blog</a>
+          <a href="pages/attivita.html" class="fcl">Attività</a>
+        </nav>
+      </div>
+      <div>
+        <div class="fc-title">Contatti</div>
+        <address class="fc-links">
+          <a href="mailto:reservation@principedelpacifico.com" class="fcl">reservation@principedelpacifico.com</a>
+          <a href="tel:+50687710567" class="fcl">+506 877 10567</a>
+          <a href="tel:+50626400345" class="fcl">+506 264 00345</a>
+          <a href="https://www.google.com/maps/place/Principe+del+Pacifico/@9.644347,-85.1696728,17z" target="_blank" rel="noopener noreferrer" class="fcl">Calle Castillo, Santa Teresa</a>
+        </address>
+      </div>
+    </div>
+    <div class="f-bot">
+      <p class="f-copy">© 2026 Principe del Pacifico. Tutti i diritti riservati.</p>
+      <div class="f-soc">
+        <a href="https://www.instagram.com/principedelpacifico" target="_blank" rel="noopener noreferrer" class="fs" aria-label="Instagram">ig</a>
+        <a href="https://www.facebook.com/principedelpacifico" target="_blank" rel="noopener noreferrer" class="fs" aria-label="Facebook">fb</a>
+        <a href="https://www.tripadvisor.com/principedelpacifico" target="_blank" rel="noopener noreferrer" class="fs" aria-label="TripAdvisor">ta</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ MOBILE STICKY CTA ═══ -->
+<div class="mobile-cta-bar" id="mob-cta" role="region" aria-label="Prenota ora">
+  <div class="mob-cta-left">
+    <span class="mob-cta-label">Prenota direttamente</span>
+    <span class="mob-cta-price">Da $140/notte</span>
+  </div>
+  <button class="mob-cta-btn" onclick="document.getElementById('apts').scrollIntoView({behavior:'smooth'})">
+    Cerca disponibilità
+  </button>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
