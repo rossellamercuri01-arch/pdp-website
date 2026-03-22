@@ -1,0 +1,9 @@
+Aggiungere qui la foto di Christian e Rossella.
+
+Nome file richiesto: christian-rossella.jpg
+
+Specifiche:
+- Formato: JPG o WebP
+- Dimensioni: min 200×200px (usata come cerchio 80×80px)
+- Qualità: alta risoluzione per retina display
+- Soggetto: foto professionale o naturale dei due proprietari insieme
