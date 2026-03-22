@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Apartment — Principe del Pacifico · Playa Santa Teresa</title>
+<meta name="description" content="Loft duplex con zona soppalco e balcone con vista piscina. Fino a 4 ospiti. 45 mq · 4 ospiti · Da $190/notte. Prenota diretto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/detail.css">
+<link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+
+<div class="mobile-menu" id="mmenu" aria-hidden="true">
+  <a href="../index.html#apts" class="nm" onclick="closeMobile()">Appartamenti</a>
+  <a href="../index.html#loc" class="nm" onclick="closeMobile()">Posizione</a>
+  <a href="../index.html#rev" class="nm" onclick="closeMobile()">Recensioni</a>
+  <a href="../index.html#owners" class="nm" onclick="closeMobile()">Contatti</a>
+  <button class="nm ncta" onclick="bookNow();closeMobile()">Prenota ora</button>
+</div>
+
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <div class="hdr-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-main">Principe del Pacifico</span>
+        <span class="logo-sub">Playa Santa Teresa · Costa Rica</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html#apts" class="nl">Appartamenti</a>
+        <a href="../index.html#loc" class="nl">Posizione</a>
+        <a href="../index.html#rev" class="nl">Recensioni</a>
+        <a href="../index.html#owners" class="nl">Contatti</a>
+        <button class="ncta" onclick="bookNow()">Prenota ora</button>
+      </nav>
+      <button class="hamburger" id="ham" aria-label="Apri menu" onclick="toggleMobile()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="../index.html#apts">Appartamenti</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Green</span>
+  </nav>
+
+  <div class="gallery" id="gallery-top">
+    <div class="gallery-main" style="background:linear-gradient(148deg,#234D3F 0%,#2D6B54 55%,#4A8C72 100%)">
+      <!-- TODO: <img src="../img/apt/green-1.jpg" alt="Green apartment — vista principale" loading="eager"> -->
+      <div class="gallery-placeholder">Foto principale · Green</div>
+      <span class="gallery-todo">📷 Foto da aggiungere</span>
+    </div>
+    <div class="gallery-thumb" style="background:linear-gradient(148deg,#234D3F 0%,#2D6B54 55%,#4A8C72 100%)">
+      <!-- TODO: <img src="../img/apt/green-2.jpg" alt="Green — camera da letto" loading="lazy"> -->
+      <div class="gallery-placeholder">Camera da letto</div>
+    </div>
+    <div class="gallery-thumb" style="background:linear-gradient(148deg,#234D3F 0%,#2D6B54 55%,#4A8C72 100%)">
+      <!-- TODO: <img src="../img/apt/green-3.jpg" alt="Green — balcone privato" loading="lazy"> -->
+      <div class="gallery-placeholder">Balcone privato</div>
+      <button class="gallery-count" onclick="openGallery()">📷 Vedi tutte le foto</button>
+    </div>
+  </div>
+
+  <div class="detail-layout">
+    <main class="content-left">
+
+      <header class="apt-header">
+        <div class="apt-eyebrow">Secondo piano · loft duplex con vista piscina</div>
+        <h1 class="apt-name">Green</h1>
+        <p class="apt-tagline">Loft duplex con zona soppalco e balcone con vista piscina. Fino a 4 ospiti.</p>
+        <div class="apt-badges">
+          <span class="badge badge-sand">45 mq</span>
+          <span class="badge badge-sand">4 ospiti</span>
+          <span class="badge badge-sand">1 bagno</span>
+          <span class="badge badge-sand">Secondo piano</span>
+          <span class="badge badge-sand">Balcone privato</span>
+          <span class="badge badge-forest">Vista piscina</span>
+        </div>
+      </header>
+
+      <div class="specs-bar">
+        <div class="spec-item">
+          <span class="spec-label">Superficie</span>
+          <span class="spec-val">45 mq</span>
+          <span class="spec-sub">484 sq ft</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Ospiti</span>
+          <span class="spec-val">4</span>
+          <span class="spec-sub">massimo 4</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Letti</span>
+          <span class="spec-val">3 letti</span>
+          <span class="spec-sub">1 Queen + 2 Twin</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Bagni</span>
+          <span class="spec-val">1 bagno</span>
+          <span class="spec-sub">completo</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Esterno</span>
+          <span class="spec-val">Balcone</span>
+          <span class="spec-sub">privato</span>
+        </div>
+      </div>
+
+      <section class="content-section">
+        <h2 class="cs-title">Perché scegliere il Green</h2>
+        <div class="highlights">
+          <div class="hl">
+            <div class="hl-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div>
+              <div class="hl-title">Vista piscina</div>
+              <div class="hl-desc">Balcone con vista diretta sull'area piscina</div>
+            </div>
+          </div>
+          <div class="hl">
+            <div class="hl-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div>
+              <div class="hl-title">Loft con soppalco</div>
+              <div class="hl-desc">Zona notte separata in soppalco — più privacy</div>
+            </div>
+          </div>
+          <div class="hl">
+            <div class="hl-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div>
+              <div class="hl-title">4 ospiti</div>
+              <div class="hl-desc">Il più capiente tra i loft — ideale per famiglie o gruppi</div>
+            </div>
+          </div>
+          <div class="hl">
+            <div class="hl-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div>
+              <div class="hl-title">Balcone privato</div>
+              <div class="hl-desc">Zona relax esterna esclusiva al secondo piano</div>
+            </div>
+          </div>
+          <div class="hl">
+            <div class="hl-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div>
+              <div class="hl-title">3 letti</div>
+              <div class="hl-desc">1 Queen + 2 Twin — configurazione flessibile</div>
+            </div>
+          </div>
+          <div class="hl">
+            <div class="hl-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div>
+              <div class="hl-title">Fibra 100MB</div>
+              <div class="hl-desc">Router esclusivo per connessione veloce</div>
+            </div>
+          </div></div>
+      </section>
+
+      <section class="content-section">
+        <h2 class="cs-title">L'appartamento</h2>
+        <p class="desc-text">Il Green è il loft più spazioso della struttura per gruppi fino a 4 persone. La zona soppalco separa la zona notte dal living, creando una distinzione che migliora la convivenza anche in spazi compatti.</p>
+<p class="desc-text" style="margin-top:14px;">Il balcone privato al secondo piano offre una vista diretta sull'area piscina — uno dei punti di forza dell'appartamento. La configurazione con 3 letti (1 Queen + 2 Twin) lo rende versatile per diverse tipologie di gruppo.</p>
+<p class="desc-text" style="margin-top:14px;">A 100 metri dalla spiaggia di Playa Santa Teresa. Ristoranti, surf spot e negozi a piedi — auto non necessaria.</p>
+
+      </section>
+
+      <section class="content-section">
+        <h2 class="cs-title">Dotazioni</h2>
+        <div class="amenities">
+          <div class="am"><svg class="am-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><span class="am-text">Fibra ottica 100MB</span></div>
+          <div class="am"><svg class="am-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/></svg><span class="am-text">Cucina completa</span></div>
+          <div class="am"><svg class="am-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span class="am-text">TV via cavo</span></div>
+          <div class="am"><svg class="am-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span class="am-text">Cassaforte</span></div>
+          <div class="am"><svg class="am-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7"/><path d="M9 22V12h6v10"/></svg><span class="am-text">Balcone con vista piscina</span></div>
+          <div class="am"><svg class="am-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span class="am-text">Piscina condivisa</span></div>
+          <div class="am"><svg class="am-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="am-text">Pulizia giornaliera</span></div>
+          <div class="am"><svg class="am-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h5l2 3v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span class="am-text">Parcheggio gratuito</span></div></div>
+      </section>
+
+      <section class="content-section">
+        <h2 class="cs-title">Politiche</h2>
+        <div class="policies-grid">
+          <div class="pol"><span class="pol-label">Check-in</span><span class="pol-val">Dalle 14:00</span><span class="pol-sub">Entro le 23:30 · Età min. 18 anni</span></div>
+          <div class="pol"><span class="pol-label">Check-out</span><span class="pol-val">Entro le 11:00</span><span class="pol-sub">Contactless disponibile</span></div>
+          <div class="pol"><span class="pol-label">Minimum stay</span><span class="pol-val">1 notte</span><span class="pol-sub">Nessun vincolo minimo</span></div>
+          <div class="pol"><span class="pol-label">Cancellazione</span><span class="pol-val">Parzialmente rimborsabile</span><span class="pol-sub">Contattare per dettagli</span></div>
+          <div class="pol"><span class="pol-label">Animali</span><span class="pol-val">Non ammessi</span><span class="pol-sub">Service animals benvenuti</span></div>
+          <div class="pol"><span class="pol-label">Bambini</span><span class="pol-val">Benvenuti</span><span class="pol-sub">Culla gratuita su richiesta</span></div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 class="cs-title">Recensioni ospiti</h2>
+        <div class="rev-card">
+          <div class="rev-stars"><svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>
+          <blockquote class="rev-text">"The owners were super helpful and responsive. It truly felt like my own apartment after a couple days."</blockquote>
+          <div class="rev-footer"><div><div class="rev-name">Courtney Parker</div><div class="rev-meta">Solo · 2 settimane · Feb 2026</div></div><span class="rev-src">Google</span></div>
+        </div>
+        <div class="rev-card">
+          <div class="rev-stars"><svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>
+          <blockquote class="rev-text">"Christian helped us feeling welcome and at home. He knows Santa Teresa very well — ask him for some hidden gems!"</blockquote>
+          <div class="rev-footer"><div><div class="rev-name">Koray</div><div class="rev-meta">Coppia · Gen 2026</div></div><span class="rev-src">Google</span></div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 class="cs-title">Altri appartamenti</h2>
+        <div class="other-grid">
+          <a href="master.html" class="other-card">
+            <div class="other-img"><div class="other-img-inner" style="background:linear-gradient(148deg,#163D2E 0%,#1C4A3A 100%)"></div></div>
+            <div class="other-body">
+              <div class="other-name">Master</div>
+              <div class="other-diff">Duplex 2 piani · top</div>
+              <div class="other-price">da <strong>$240</strong>/notte</div>
+            </div>
+          </a>
+          <a href="red.html" class="other-card">
+            <div class="other-img"><div class="other-img-inner" style="background:linear-gradient(148deg,#5C3628 0%,#8B4A35 100%)"></div></div>
+            <div class="other-body">
+              <div class="other-name">Red</div>
+              <div class="other-diff">Remote work · duplex</div>
+              <div class="other-price">da <strong>$160</strong>/notte</div>
+            </div>
+          </a>
+          <a href="white.html" class="other-card">
+            <div class="other-img"><div class="other-img-inner" style="background:linear-gradient(148deg,#4A8C72 0%,#2D6B54 100%)"></div></div>
+            <div class="other-body">
+              <div class="other-name">White</div>
+              <div class="other-diff">Piano terra · piscina</div>
+              <div class="other-price">da <strong>$220</strong>/notte</div>
+            </div>
+          </a></div>
+      </section>
+
+    </main>
+
+    <aside class="sidebar" aria-label="Prenotazione">
+      <div class="booking-card">
+        <div class="bc-header">
+          <div class="bc-eyebrow">Prenota direttamente</div>
+          <div class="bc-price">$190<span class="bc-price-per">/notte</span></div>
+          <div class="bc-price-note">✓ Miglior prezzo garantito — meno di Expedia ($209)</div>
+        </div>
+        <div class="bc-body">
+          <div class="bc-fields">
+            <div class="bc-row2">
+              <div class="bc-field" id="bc-ci">
+                <label class="bc-label" for="bci">Check-in</label>
+                <input class="bc-input" id="bci" type="date">
+              </div>
+              <div class="bc-field" id="bc-co">
+                <label class="bc-label" for="bco">Check-out</label>
+                <input class="bc-input" id="bco" type="date">
+              </div>
+            </div>
+            <div class="bc-field">
+              <label class="bc-label" for="bgu">Ospiti</label>
+              <select class="bc-input" id="bgu"><option value="1">1 ospite</option>
+<option value="2" selected>2 ospiti</option>
+<option value="3">3 ospiti</option>
+<option value="4">4 ospiti (max)</option>
+</select>
+            </div>
+          </div>
+          <div class="bc-total" id="bc-total">
+            <div class="bc-total-row"><span id="bc-nights-label">Seleziona le date per il totale</span><span id="bc-nights-val"></span></div>
+            <div class="bc-total-row bold"><span>Totale stimato</span><span id="bc-total-val">—</span></div>
+          </div>
+          <button class="bc-btn" onclick="bookNow()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3v12"/></svg>
+            Prenota ora su Beds24
+          </button>
+          <div class="bc-guarantee">Nessuna commissione — prezzo diretto</div>
+          <div class="bc-sep"></div>
+          <div class="value-pills">
+            <div class="vp"><svg class="vp-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><span class="vp-text"><strong>$19/notte meno</strong> di Expedia</span></div>
+            <div class="vp"><svg class="vp-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span class="vp-text">Rispondono Christian e Rossella <strong>direttamente</strong></span></div>
+            <div class="vp"><svg class="vp-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h5l2 3v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span class="vp-text">Parcheggio gratuito <strong>incluso</strong></span></div>
+          </div>
+          <div class="bc-sep"></div>
+          <address class="bc-contact">
+            <div class="bc-contact-title">Hai domande?</div>
+            <a href="mailto:reservation@principedelpacifico.com" class="bc-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              reservation@principedelpacifico.com
+            </a>
+            <a href="tel:+50687710567" class="bc-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
+              +506 877 10567
+            </a>
+          </address>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="mob-book" id="mob-book">
+  <div class="mob-price">
+    <span class="mob-price-label">Green Apartment</span>
+    <span class="mob-price-val">$190<span style="font-size:13px;font-weight:300;color:rgba(255,255,255,.55)">/notte</span></span>
+  </div>
+  <button class="mob-btn" onclick="bookNow()">Prenota ora →</button>
+</div>
+
+<footer class="footer" style="margin-top:80px;">
+  <div class="wrap">
+    <div class="fg">
+      <div class="footer-brand">
+        <span class="fb-name">Principe del Pacifico</span>
+        <span class="fb-loc">Playa Santa Teresa · Costa Rica</span>
+        <p class="fb-desc">Appartamenti con piscina a 100m dalla spiaggia. Prenotando direttamente hai il prezzo migliore garantito.</p>
+      </div>
+      <div>
+        <div class="fc-title">Appartamenti</div>
+        <nav class="fc-links">
+          <a href="master.html" class="fcl">Master</a>
+          <a href="white.html" class="fcl">White</a>
+          <a href="blue.html" class="fcl">Blue</a>
+          <a href="red.html" class="fcl">Red</a>
+          <a href="green.html" class="fcl">Green</a>
+          <a href="tora.html" class="fcl">Tora</a>
+          <a href="brown.html" class="fcl">Brown</a>
+        </nav>
+      </div>
+      <div>
+        <div class="fc-title">Info</div>
+        <nav class="fc-links">
+          <a href="../index.html#loc" class="fcl">Dove siamo</a>
+          <a href="../index.html#rev" class="fcl">Recensioni</a>
+          <a href="../index.html" class="fcl">Homepage</a>
+        </nav>
+      </div>
+      <div>
+        <div class="fc-title">Contatti</div>
+        <address class="fc-links">
+          <a href="mailto:reservation@principedelpacifico.com" class="fcl">reservation@principedelpacifico.com</a>
+          <a href="tel:+50687710567" class="fcl">+506 877 10567</a>
+          <a href="tel:+50626400345" class="fcl">+506 264 00345</a>
+        </address>
+      </div>
+    </div>
+    <div class="f-bot">
+      <p class="f-copy">© 2026 Principe del Pacifico. Tutti i diritti riservati.</p>
+      <div class="f-soc">
+        <a href="https://www.instagram.com/principedelpacifico" target="_blank" rel="noopener noreferrer" class="fs" aria-label="Instagram">ig</a>
+        <a href="https://www.facebook.com/principedelpacifico" target="_blank" rel="noopener noreferrer" class="fs" aria-label="Facebook">fb</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/booking.js"></script>
+<script>
+const APT_ID    = 'green';
+const APT_PRICE = 190;
+const bci = document.getElementById('bci');
+const bco = document.getElementById('bco');
+const today = new Date().toISOString().split('T')[0];
+bci.min = today; bco.min = today;
+const p = new URLSearchParams(window.location.search);
+if(p.get('checkin'))  bci.value = p.get('checkin');
+if(p.get('checkout')) bco.value = p.get('checkout');
+if(p.get('guests'))   document.getElementById('bgu').value = p.get('guests');
+updateTotal();
+bci.addEventListener('change', () => { bco.min = bci.value; if(bco.value && bco.value <= bci.value) bco.value=''; document.getElementById('bc-ci').classList.remove('err'); updateTotal(); });
+bco.addEventListener('change', () => { document.getElementById('bc-co').classList.remove('err'); updateTotal(); });
+function updateTotal() {
+  const ci=bci.value, co=bco.value;
+  if(!ci||!co) { document.getElementById('bc-nights-label').textContent='Seleziona le date per il totale'; document.getElementById('bc-nights-val').textContent=''; document.getElementById('bc-total-val').textContent='—'; return; }
+  const nights=Math.round((new Date(co)-new Date(ci))/86400000);
+  if(nights<=0) return;
+  document.getElementById('bc-nights-label').textContent=nights+' nott'+(nights===1?'e':'i')+' × $'+APT_PRICE;
+  document.getElementById('bc-nights-val').textContent='$'+(nights*APT_PRICE);
+  document.getElementById('bc-total-val').textContent='$'+(nights*APT_PRICE);
+}
+function bookNow() {
+  const ci=bci.value, co=bco.value, gu=document.getElementById('bgu').value;
+  let err=false;
+  if(!ci){ document.getElementById('bc-ci').classList.add('err'); err=true; }
+  if(!co){ document.getElementById('bc-co').classList.add('err'); err=true; }
+  if(err){ document.getElementById('bc-ci').scrollIntoView({behavior:'smooth',block:'center'}); return; }
+  const url=buildBookingUrl({apartmentId:APT_ID,checkin:ci,checkout:co,adults:parseInt(gu),children:0});
+  window.open(url,'_blank','noopener,noreferrer');
+}
+const mobBook=document.getElementById('mob-book');
+const galleryEl=document.getElementById('gallery-top');
+new IntersectionObserver(([e])=>mobBook.classList.toggle('show',!e.isIntersecting),{threshold:0}).observe(galleryEl);
+function openGallery(){ alert('Galleria completa — da implementare con lightbox prima del lancio.'); }
+</script>
+</body>
+</html>
