@@ -1,0 +1,24 @@
+Aggiungere qui le foto degli appartamenti in formato JPG o WebP.
+
+Nomi file richiesti:
+- master-1.jpg  (foto principale — soggiorno/living)
+- master-2.jpg  (balcone)
+- master-3.jpg  (camera da letto)
+- white-1.jpg
+- white-2.jpg
+- blue-1.jpg
+- blue-2.jpg
+- red-1.jpg
+- red-2.jpg
+- green-1.jpg
+- green-2.jpg
+- tora-1.jpg
+- tora-2.jpg
+- brown-1.jpg
+- brown-2.jpg
+
+Specifiche tecniche:
+- Formato: JPG o WebP (preferito WebP per performance)
+- Dimensioni: min 1200×800px
+- Peso max: 200KB per immagine (comprimere con squoosh.app o imageoptim)
+- Aspect ratio: 16:9 per le foto principali delle card
