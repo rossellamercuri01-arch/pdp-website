@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promozioni — Principe del Pacifico · Playa Santa Teresa</title>
+<meta name="description" content="Offerte speciali e sconti per soggiorni a Principe del Pacifico. Prenota direttamente e risparmia rispetto a Expedia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/footer.css">
+<style>
+.page-hero{background:var(--forest-deep);padding:80px 0 60px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 75% 30%,rgba(74,140,114,.18) 0%,transparent 58%);}
+.page-hero-inner{position:relative;z-index:1;}
+.page-ey{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--forest-pale);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.page-ey::before{content:'';width:20px;height:1px;background:var(--forest-pale);opacity:.6;}
+.page-h1{font-family:var(--font-display);font-size:clamp(38px,5vw,60px);font-weight:300;color:var(--white);line-height:1.05;letter-spacing:-.02em;margin-bottom:14px;}
+.page-h1 em{font-style:italic;color:var(--forest-pale);}
+.page-desc{font-size:16px;font-weight:300;color:rgba(255,255,255,.6);max-width:500px;line-height:1.65;}
+.promo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:60px 0;}
+@media(max-width:1023px){.promo-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:639px){.promo-grid{grid-template-columns:1fr;}}
+.promo-card{background:var(--white);border:1px solid var(--ink-ghost);border-radius:20px;overflow:hidden;transition:box-shadow .25s,transform .2s cubic-bezier(.34,1.56,.64,1);}
+.promo-card:hover{box-shadow:0 8px 32px rgba(26,23,20,.1);transform:translateY(-3px);}
+.promo-card-featured{grid-column:span 2;}
+@media(max-width:1023px){.promo-card-featured{grid-column:span 1;}}
+.promo-top{padding:28px 28px 0;}
+.promo-badge{display:inline-flex;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:999px;margin-bottom:16px;}
+.pb-green{background:var(--forest-wash);color:var(--forest-deep);}
+.pb-earth{background:var(--earth-pale);color:var(--earth);}
+.pb-sand{background:var(--sand-warm);color:var(--ink-mid);}
+.promo-title{font-family:var(--font-display);font-size:26px;font-weight:400;color:var(--ink);line-height:1.1;margin-bottom:8px;}
+.promo-title em{font-style:italic;color:var(--forest-mid);}
+.promo-desc{font-size:14px;font-weight:300;color:var(--ink-soft);line-height:1.6;margin-bottom:20px;}
+.promo-conditions{font-size:11px;color:var(--ink-muted);padding:0 28px 20px;border-top:1px solid var(--ink-ghost);padding-top:16px;margin:0 28px;}
+.promo-footer{display:flex;align-items:center;justify-content:space-between;padding:16px 28px 24px;}
+.promo-discount{font-family:var(--font-display);font-size:32px;font-weight:600;color:var(--forest);line-height:1;}
+.promo-discount span{font-family:var(--font-body);font-size:13px;font-weight:300;color:var(--ink-muted);}
+.promo-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--white);background:var(--forest);padding:10px 20px;border-radius:999px;transition:background .2s,transform .15s;}
+.promo-btn:hover{background:var(--forest-deep);transform:translateY(-1px);}
+.direct-banner{background:var(--forest);border-radius:20px;padding:40px;display:flex;align-items:center;justify-content:space-between;gap:32px;margin-bottom:60px;flex-wrap:wrap;}
+.db-text{color:var(--white);}
+.db-title{font-family:var(--font-display);font-size:28px;font-weight:300;margin-bottom:6px;}
+.db-title em{font-style:italic;color:var(--forest-pale);}
+.db-desc{font-size:14px;font-weight:300;color:var(--forest-pale);}
+.db-btn{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--forest-deep);background:var(--white);padding:14px 28px;border-radius:999px;white-space:nowrap;transition:opacity .2s;flex-shrink:0;}
+.db-btn:hover{opacity:.9;}
+</style>
+</head>
+<body>
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <div class="hdr-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-main">Principe del Pacifico</span>
+        <span class="logo-sub">Playa Santa Teresa · Costa Rica</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html#apts" class="nl">Appartamenti</a>
+        <a href="../index.html#loc" class="nl">Posizione</a>
+        <a href="../index.html#rev" class="nl">Recensioni</a>
+        <a href="contatti.html" class="nl">Contatti</a>
+        <a href="../index.html#apts" class="ncta">Prenota ora</a>
+      </nav>
+      <button class="hamburger" id="ham" aria-label="Apri menu" onclick="toggleMobile()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mmenu" aria-hidden="true">
+  <a href="../index.html#apts" class="nm" onclick="closeMobile()">Appartamenti</a>
+  <a href="../index.html#loc" class="nm" onclick="closeMobile()">Posizione</a>
+  <a href="../index.html#rev" class="nm" onclick="closeMobile()">Recensioni</a>
+  <a href="contatti.html" class="nm" onclick="closeMobile()">Contatti</a>
+  <a href="../index.html#apts" class="nm ncta" onclick="closeMobile()">Prenota ora</a>
+</div>
+
+<div class="page-hero">
+  <div class="wrap">
+    <div class="page-hero-inner">
+      <div class="page-ey">Offerte speciali</div>
+      <h1 class="page-h1">Promozioni<br><em>e sconti</em></h1>
+      <p class="page-desc">Prenota direttamente e risparmia già di default. Queste offerte si aggiungono al prezzo già più basso di Expedia.</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="direct-banner">
+    <div class="db-text">
+      <div class="db-title">Prenotando diretto <em>risparmi già</em></div>
+      <div class="db-desc">Senza promozioni, il prezzo diretto è già $15–24/notte meno di Expedia. Queste offerte si aggiungono.</div>
+    </div>
+    <a href="../index.html#apts" class="db-btn">
+      Vedi disponibilità
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <div class="promo-grid">
+
+    <div class="promo-card promo-card-featured">
+      <div class="promo-top">
+        <span class="promo-badge pb-green">Attiva ora</span>
+        <div class="promo-title">Soggiorno lungo —<br><em>sconto 10%</em></div>
+        <p class="promo-desc">Prenota 7 notti o più e ottieni il 10% di sconto sul totale. Valido per tutti gli appartamenti prenotando direttamente — non disponibile su Expedia o altri portali.</p>
+      </div>
+      <div class="promo-conditions">Validità: tutto il 2026 · Min. 7 notti · Non cumulabile con altre offerte · Codice da richiedere via email</div>
+      <div class="promo-footer">
+        <div class="promo-discount">-10%<span> su 7+ notti</span></div>
+        <a href="contatti.html" class="promo-btn">Richiedi codice <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="promo-card">
+      <div class="promo-top">
+        <span class="promo-badge pb-earth">Stagionale</span>
+        <div class="promo-title">Bassa stagione<br><em>prezzi ridotti</em></div>
+        <p class="promo-desc">Maggio–giugno e settembre–ottobre: prezzi ridotti su tutti gli appartamenti. Santa Teresa fuori stagione è ancora bellissima — meno affollata e più autentica.</p>
+      </div>
+      <div class="promo-conditions">Periodi: Mag–Giu · Set–Ott · Prezzi applicati automaticamente</div>
+      <div class="promo-footer">
+        <div class="promo-discount">-15%<span> bassa stagione</span></div>
+        <a href="../index.html#apts" class="promo-btn">Vedi prezzi <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="promo-card">
+      <div class="promo-top">
+        <span class="promo-badge pb-sand">Remote work</span>
+        <div class="promo-title">Lavora da<br><em>Santa Teresa</em></div>
+        <p class="promo-desc">Per soggiorni di 14+ giorni negli appartamenti Red o Master. Fibra 100MB dedicata, scrivania, ambiente ideale per lavorare con il Pacifico fuori dalla finestra.</p>
+      </div>
+      <div class="promo-conditions">Min. 14 notti · Appartamenti Red o Master · Richiedi via email</div>
+      <div class="promo-footer">
+        <div class="promo-discount">-15%<span> su 14+ notti</span></div>
+        <a href="contatti.html" class="promo-btn">Richiedi <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="promo-card">
+      <div class="promo-top">
+        <span class="promo-badge pb-green">Famiglia</span>
+        <div class="promo-title">Appartamenti<br><em>per famiglie</em></div>
+        <p class="promo-desc">Master (5 ospiti, 2 bagni) e White (4 ospiti, piano terra) sono i nostri appartamenti più adatti alle famiglie. Culla gratuita su richiesta, parcheggio incluso.</p>
+      </div>
+      <div class="promo-conditions">Culla gratuita su prenotazione · Applicabile a Master e White</div>
+      <div class="promo-footer">
+        <div class="promo-discount" style="font-size:20px;">Culla<span> gratuita</span></div>
+        <a href="master.html" class="promo-btn">Vedi Master <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+    <div class="promo-card">
+      <div class="promo-top">
+        <span class="promo-badge pb-earth">Ritorno</span>
+        <div class="promo-title">Ospiti<br><em>che tornano</em></div>
+        <p class="promo-desc">Sei già stato da noi? Scrivi un messaggio a Christian o Rossella — riserviamo sempre un trattamento speciale a chi torna a Principe del Pacifico.</p>
+      </div>
+      <div class="promo-conditions">Per ospiti con soggiorno precedente · Contattare direttamente</div>
+      <div class="promo-footer">
+        <div class="promo-discount" style="font-size:20px;">Sconto<span> fedeltà</span></div>
+        <a href="contatti.html" class="promo-btn">Contattaci <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer" style="margin-top:80px;">
+  <div class="wrap">
+    <div class="fg">
+      <div class="footer-brand">
+        <span class="fb-name">Principe del Pacifico</span>
+        <span class="fb-loc">Playa Santa Teresa · Costa Rica</span>
+        <p class="fb-desc">Appartamenti con piscina a 100m dalla spiaggia. Prenotando direttamente hai il prezzo migliore garantito.</p>
+      </div>
+      <div>
+        <div class="fc-title">Appartamenti</div>
+        <nav class="fc-links">
+          <a href="master.html" class="fcl">Master</a>
+          <a href="white.html" class="fcl">White</a>
+          <a href="blue.html" class="fcl">Blue</a>
+          <a href="red.html" class="fcl">Red</a>
+          <a href="green.html" class="fcl">Green</a>
+          <a href="tora.html" class="fcl">Tora</a>
+          <a href="brown.html" class="fcl">Brown</a>
+        </nav>
+      </div>
+      <div>
+        <div class="fc-title">Info</div>
+        <nav class="fc-links">
+          <a href="../index.html#loc" class="fcl">Dove siamo</a>
+          <a href="../index.html#rev" class="fcl">Recensioni</a>
+          <a href="promozioni.html" class="fcl">Promozioni</a>
+          <a href="blog.html" class="fcl">Blog</a>
+          <a href="attivita.html" class="fcl">Attività</a>
+        </nav>
+      </div>
+      <div>
+        <div class="fc-title">Contatti</div>
+        <address class="fc-links">
+          <a href="mailto:reservation@principedelpacifico.com" class="fcl">reservation@principedelpacifico.com</a>
+          <a href="tel:+50687710567" class="fcl">+506 877 10567</a>
+          <a href="tel:+50626400345" class="fcl">+506 264 00345</a>
+        </address>
+      </div>
+    </div>
+    <div class="f-bot">
+      <p class="f-copy">© 2026 Principe del Pacifico. Tutti i diritti riservati.</p>
+      <div class="f-soc">
+        <a href="https://www.instagram.com/principedelpacifico" target="_blank" rel="noopener noreferrer" class="fs" aria-label="Instagram">ig</a>
+        <a href="https://www.facebook.com/principedelpacifico" target="_blank" rel="noopener noreferrer" class="fs" aria-label="Facebook">fb</a>
+        <a href="https://www.tripadvisor.com/principedelpacifico" target="_blank" rel="noopener noreferrer" class="fs" aria-label="TripAdvisor">ta</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

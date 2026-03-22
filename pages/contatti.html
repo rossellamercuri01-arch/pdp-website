@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contatti — Principe del Pacifico · Playa Santa Teresa</title>
+<meta name="description" content="Contatta Christian e Rossella per prenotazioni, domande o informazioni su Principe del Pacifico a Playa Santa Teresa, Costa Rica.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/footer.css">
+<style>
+.page-hero{background:var(--forest-deep);padding:80px 0 60px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 75% 30%,rgba(74,140,114,.18) 0%,transparent 58%);}
+.page-hero-inner{position:relative;z-index:1;}
+.page-ey{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--forest-pale);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.page-ey::before{content:'';width:20px;height:1px;background:var(--forest-pale);opacity:.6;}
+.page-h1{font-family:var(--font-display);font-size:clamp(38px,5vw,60px);font-weight:300;color:var(--white);line-height:1.05;letter-spacing:-.02em;margin-bottom:14px;}
+.page-h1 em{font-style:italic;color:var(--forest-pale);}
+.page-desc{font-size:16px;font-weight:300;color:rgba(255,255,255,.6);max-width:500px;line-height:1.65;}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:60px 0;align-items:start;}
+@media(max-width:767px){.contact-layout{grid-template-columns:1fr;gap:40px;}}
+.contact-left{display:flex;flex-direction:column;gap:20px;}
+.contact-card{background:var(--white);border:1px solid var(--ink-ghost);border-radius:20px;padding:28px;transition:box-shadow .2s,transform .2s cubic-bezier(.34,1.56,.64,1);}
+.contact-card:hover{box-shadow:0 6px 24px rgba(26,23,20,.08);transform:translateY(-2px);}
+.cc-icon{width:44px;height:44px;border-radius:12px;background:var(--forest-ghost);display:flex;align-items:center;justify-content:center;color:var(--forest);margin-bottom:14px;}
+.cc-title{font-family:var(--font-display);font-size:20px;font-weight:400;color:var(--ink);margin-bottom:4px;}
+.cc-sub{font-size:12px;color:var(--ink-muted);margin-bottom:14px;}
+.cc-value{font-size:16px;font-weight:500;color:var(--forest);transition:color .15s;display:block;}
+.cc-value:hover{color:var(--forest-deep);}
+.cc-note{font-size:12px;color:var(--ink-muted);margin-top:6px;}
+.hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;}
+.hour-item{background:var(--forest-ghost);border-radius:10px;padding:10px 12px;}
+.hour-label{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);}
+.hour-val{font-size:14px;font-weight:500;color:var(--ink);margin-top:2px;}
+.contact-right{display:flex;flex-direction:column;gap:20px;}
+.form-card{background:var(--white);border:1px solid var(--ink-ghost);border-radius:20px;padding:32px;}
+.form-title{font-family:var(--font-display);font-size:26px;font-weight:400;color:var(--ink);margin-bottom:6px;}
+.form-title em{font-style:italic;color:var(--forest-mid);}
+.form-desc{font-size:13px;color:var(--ink-muted);margin-bottom:24px;}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+.form-label{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);}
+.form-input{font-size:15px;font-weight:400;color:var(--ink);background:var(--sand);border:1.5px solid var(--ink-ghost);border-radius:10px;padding:12px 14px;font-family:var(--font-body);outline:none;transition:border-color .15s;width:100%;}
+.form-input:focus{border-color:var(--forest);background:var(--white);}
+textarea.form-input{min-height:120px;resize:vertical;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:639px){.form-row{grid-template-columns:1fr;}}
+.form-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--forest);color:var(--white);padding:15px;border-radius:12px;font-size:15px;font-weight:500;font-family:var(--font-body);cursor:pointer;border:none;transition:background .2s,transform .2s;box-shadow:0 4px 14px rgba(28,74,58,.3);margin-top:8px;}
+.form-btn:hover{background:var(--forest-deep);transform:translateY(-1px);}
+.form-note{font-size:11px;color:var(--ink-muted);text-align:center;margin-top:10px;}
+.map-card{background:var(--forest-deep);border-radius:20px;overflow:hidden;}
+.map-placeholder{height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;}
+.map-placeholder::before{content:'';position:absolute;inset:0;background:radial-gradient(circle 60px at 50% 45%,rgba(255,255,255,.1) 0%,transparent 50%);}
+.map-pin{position:relative;z-index:1;width:40px;height:40px;background:var(--white);border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 4px 12px rgba(0,0,0,.2);}
+.map-pin::after{content:'';position:absolute;inset:8px;background:var(--forest);border-radius:50%;transform:rotate(45deg);}
+.map-info{position:relative;z-index:1;text-align:center;}
+.map-name{font-size:13px;font-weight:500;color:var(--white);}
+.map-addr{font-size:11px;color:var(--forest-pale);margin-top:2px;}
+.map-btn{position:relative;z-index:1;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:var(--white);font-size:12px;font-weight:500;padding:8px 18px;border-radius:999px;font-family:var(--font-body);cursor:pointer;transition:background .15s;text-decoration:none;display:inline-block;}
+.map-btn:hover{background:rgba(255,255,255,.25);}
+.map-todo{font-size:10px;color:rgba(255,255,255,.3);padding:8px 20px 16px;text-align:center;font-style:italic;}
+.owners-card{background:var(--forest-deep);border-radius:20px;padding:28px;position:relative;overflow:hidden;}
+.owners-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 85% 30%,rgba(74,140,114,.15) 0%,transparent 55%);}
+.oc-inner{position:relative;z-index:1;}
+.oc-avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--forest-mid) 0%,var(--forest-soft) 100%);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:18px;font-weight:400;font-style:italic;color:rgba(255,255,255,.7);border:2px solid rgba(255,255,255,.15);margin-bottom:14px;}
+.oc-name{font-family:var(--font-display);font-size:22px;font-weight:300;color:var(--white);margin-bottom:4px;}
+.oc-name em{font-style:italic;color:var(--forest-pale);}
+.oc-role{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--forest-pale);margin-bottom:12px;}
+.oc-bio{font-size:13px;font-weight:300;color:rgba(255,255,255,.6);line-height:1.65;}
+</style>
+</head>
+<body>
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <div class="hdr-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-main">Principe del Pacifico</span>
+        <span class="logo-sub">Playa Santa Teresa · Costa Rica</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html#apts" class="nl">Appartamenti</a>
+        <a href="../index.html#loc" class="nl">Posizione</a>
+        <a href="../index.html#rev" class="nl">Recensioni</a>
+        <a href="contatti.html" class="nl">Contatti</a>
+        <a href="../index.html#apts" class="ncta">Prenota ora</a>
+      </nav>
+      <button class="hamburger" id="ham" aria-label="Apri menu" onclick="toggleMobile()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mmenu" aria-hidden="true">
+  <a href="../index.html#apts" class="nm" onclick="closeMobile()">Appartamenti</a>
+  <a href="../index.html#loc" class="nm" onclick="closeMobile()">Posizione</a>
+  <a href="../index.html#rev" class="nm" onclick="closeMobile()">Recensioni</a>
+  <a href="contatti.html" class="nm" onclick="closeMobile()">Contatti</a>
+  <a href="../index.html#apts" class="nm ncta" onclick="closeMobile()">Prenota ora</a>
+</div>
+
+<div class="page-hero">
+  <div class="wrap">
+    <div class="page-hero-inner">
+      <div class="page-ey">Siamo qui per te</div>
+      <h1 class="page-h1">Scrivici o<br><em>chiamaci</em></h1>
+      <p class="page-desc">Christian e Rossella rispondono personalmente. Di solito entro poche ore.</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="contact-layout">
+
+    <div class="contact-left">
+
+      <div class="contact-card">
+        <div class="cc-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="cc-title">Email</div>
+        <div class="cc-sub">Per prenotazioni, domande e informazioni</div>
+        <a href="mailto:reservation@principedelpacifico.com" class="cc-value">reservation@principedelpacifico.com</a>
+        <p class="cc-note">Risposta di solito entro 2–4 ore</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="cc-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
+        </div>
+        <div class="cc-title">Telefono / WhatsApp</div>
+        <div class="cc-sub">Per urgenze o check-in last minute</div>
+        <a href="tel:+50687710567" class="cc-value">+506 877 10567</a>
+        <a href="tel:+50626400345" class="cc-value" style="margin-top:4px;">+506 264 00345</a>
+        <p class="cc-note">Disponibili anche su WhatsApp</p>
+      </div>
+
+      <div class="contact-card">
+        <div class="cc-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="cc-title">Orari check-in / check-out</div>
+        <div class="cc-sub">Informazioni per l'arrivo</div>
+        <div class="hours-grid">
+          <div class="hour-item"><div class="hour-label">Check-in</div><div class="hour-val">14:00 – 23:30</div></div>
+          <div class="hour-item"><div class="hour-label">Check-out</div><div class="hour-val">Entro 11:00</div></div>
+          <div class="hour-item"><div class="hour-label">Early check-in</div><div class="hour-val">Su richiesta</div></div>
+          <div class="hour-item"><div class="hour-label">Late check-out</div><div class="hour-val">Su disponibilità</div></div>
+        </div>
+      </div>
+
+      <div class="map-card">
+        <div class="map-placeholder">
+          <!--
+            TODO: sostituire con iframe Google Maps prima del lancio.
+            <iframe src="https://maps.google.com/maps?q=9.644347,-85.1696728&z=16&output=embed"
+              width="100%" height="220" style="border:0;" allowfullscreen loading="lazy"></iframe>
+          -->
+          <div class="map-pin"></div>
+          <div class="map-info">
+            <div class="map-name">Principe del Pacifico</div>
+            <div class="map-addr">Calle Castillo, Playa Santa Teresa</div>
+          </div>
+          <a href="https://www.google.com/maps/place/Principe+del+Pacifico/@9.644347,-85.1696728,17z" target="_blank" rel="noopener noreferrer" class="map-btn">Apri in Google Maps →</a>
+        </div>
+        <div class="map-todo">⚠️ TODO: sostituire con iframe Google Maps prima del lancio</div>
+      </div>
+
+      <div class="owners-card">
+        <div class="oc-inner">
+          <!--
+            TODO: <img src="../img/owners/christian-rossella.jpg" alt="Christian e Rossella" style="width:64px;height:64px;border-radius:50%;object-fit:cover;margin-bottom:14px;">
+          -->
+          <div class="oc-avatar">C&R</div>
+          <div class="oc-name">Christian e <em>Rossella</em></div>
+          <div class="oc-role">Proprietari · Principe del Pacifico</div>
+          <p class="oc-bio">Siamo una coppia italiana innamorata di Santa Teresa. Gestiamo personalmente ogni appartamento e siamo sempre disponibili — per un consiglio sul surf, un ristorante nascosto o qualsiasi necessità durante il tuo soggiorno.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="contact-right">
+      <div class="form-card">
+        <div class="form-title">Scrivi un<br><em>messaggio</em></div>
+        <p class="form-desc">Per informazioni, disponibilità o richieste speciali. Rispondiamo direttamente.</p>
+
+        <form id="contact-form" onsubmit="handleSubmit(event)" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fname">Nome</label>
+              <input class="form-input" id="fname" type="text" placeholder="Il tuo nome" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="femail">Email</label>
+              <input class="form-input" id="femail" type="email" placeholder="tua@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fsubject">Oggetto</label>
+            <select class="form-input" id="fsubject">
+              <option value="">Seleziona...</option>
+              <option value="prenotazione">Richiesta prenotazione</option>
+              <option value="disponibilita">Verifica disponibilità</option>
+              <option value="promozione">Informazioni promozioni</option>
+              <option value="checkin">Informazioni check-in</option>
+              <option value="trasferimento">Trasferimento aeroporto</option>
+              <option value="altro">Altro</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="fmsg">Messaggio</label>
+            <textarea class="form-input" id="fmsg" placeholder="Scrivi qui il tuo messaggio..." required></textarea>
+          </div>
+          <button type="submit" class="form-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Invia messaggio
+          </button>
+          <p class="form-note">Risposta garantita entro 24 ore · I tuoi dati non vengono condivisi</p>
+        </form>
+
+        <div id="form-success" style="display:none;text-align:center;padding:32px 0;">
+          <div style="font-size:40px;margin-bottom:16px;">✓</div>
+          <div style="font-family:var(--font-display);font-size:22px;font-weight:400;color:var(--forest);margin-bottom:8px;">Messaggio inviato!</div>
+          <p style="font-size:14px;color:var(--ink-muted);">Christian o Rossella ti risponderanno entro poche ore.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer" style="margin-top:80px;">
+  <div class="wrap">
+    <div class="fg">
+      <div class="footer-brand">
+        <span class="fb-name">Principe del Pacifico</span>
+        <span class="fb-loc">Playa Santa Teresa · Costa Rica</span>
+        <p class="fb-desc">Appartamenti con piscina a 100m dalla spiaggia. Prenotando direttamente hai il prezzo migliore garantito.</p>
+      </div>
+      <div>
+        <div class="fc-title">Appartamenti</div>
+        <nav class="fc-links">
+          <a href="master.html" class="fcl">Master</a>
+          <a href="white.html" class="fcl">White</a>
+          <a href="blue.html" class="fcl">Blue</a>
+          <a href="red.html" class="fcl">Red</a>
+          <a href="green.html" class="fcl">Green</a>
+          <a href="tora.html" class="fcl">Tora</a>
+          <a href="brown.html" class="fcl">Brown</a>
+        </nav>
+      </div>
+      <div>
+        <div class="fc-title">Info</div>
+        <nav class="fc-links">
+          <a href="../index.html#loc" class="fcl">Dove siamo</a>
+          <a href="../index.html#rev" class="fcl">Recensioni</a>
+          <a href="promozioni.html" class="fcl">Promozioni</a>
+          <a href="blog.html" class="fcl">Blog</a>
+          <a href="attivita.html" class="fcl">Attività</a>
+        </nav>
+      </div>
+      <div>
+        <div class="fc-title">Contatti</div>
+        <address class="fc-links">
+          <a href="mailto:reservation@principedelpacifico.com" class="fcl">reservation@principedelpacifico.com</a>
+          <a href="tel:+50687710567" class="fcl">+506 877 10567</a>
+          <a href="tel:+50626400345" class="fcl">+506 264 00345</a>
+        </address>
+      </div>
+    </div>
+    <div class="f-bot">
+      <p class="f-copy">© 2026 Principe del Pacifico. Tutti i diritti riservati.</p>
+      <div class="f-soc">
+        <a href="https://www.instagram.com/principedelpacifico" target="_blank" rel="noopener noreferrer" class="fs" aria-label="Instagram">ig</a>
+        <a href="https://www.facebook.com/principedelpacifico" target="_blank" rel="noopener noreferrer" class="fs" aria-label="Facebook">fb</a>
+        <a href="https://www.tripadvisor.com/principedelpacifico" target="_blank" rel="noopener noreferrer" class="fs" aria-label="TripAdvisor">ta</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('fname').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const msg = document.getElementById('fmsg').value.trim();
+  if(!name || !email || !msg) { alert('Compila tutti i campi obbligatori.'); return; }
+
+  // TODO produzione: sostituire con fetch a backend o servizio email (Formspree, EmailJS, ecc.)
+  // Esempio Formspree: fetch('https://formspree.io/f/TUOID', { method:'POST', body: new FormData(e.target) })
+
+  document.getElementById('contact-form').style.display = 'none';
+  document.getElementById('form-success').style.display = 'block';
+
+  // Fallback: apre client email
+  const subject = encodeURIComponent(document.getElementById('fsubject').value || 'Messaggio dal sito');
+  const body = encodeURIComponent(msg);
+  setTimeout(() => { window.location.href = `mailto:reservation@principedelpacifico.com?subject=${subject}&body=${body}`; }, 1500);
+}
+</script>
+</body>
+</html>

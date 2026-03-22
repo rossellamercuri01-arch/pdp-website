@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Principe del Pacifico · Playa Santa Teresa</title>
+<meta name="description" content="Consigli, guide e storie da Playa Santa Teresa, Costa Rica. Surf, natura, ristoranti e tutto quello che devi sapere prima di arrivare.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/footer.css">
+<style>
+.page-hero{background:var(--forest-deep);padding:80px 0 60px;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 75% 30%,rgba(74,140,114,.18) 0%,transparent 58%);}
+.page-hero-inner{position:relative;z-index:1;}
+.page-ey{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--forest-pale);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.page-ey::before{content:'';width:20px;height:1px;background:var(--forest-pale);opacity:.6;}
+.page-h1{font-family:var(--font-display);font-size:clamp(38px,5vw,60px);font-weight:300;color:var(--white);line-height:1.05;letter-spacing:-.02em;margin-bottom:14px;}
+.page-h1 em{font-style:italic;color:var(--forest-pale);}
+.page-desc{font-size:16px;font-weight:300;color:rgba(255,255,255,.6);max-width:500px;line-height:1.65;}
+.blog-layout{display:grid;grid-template-columns:1fr 300px;gap:40px;padding:60px 0;align-items:start;}
+@media(max-width:1023px){.blog-layout{grid-template-columns:1fr;}}
+.blog-featured{background:var(--white);border:1px solid var(--ink-ghost);border-radius:20px;overflow:hidden;margin-bottom:24px;transition:box-shadow .2s,transform .2s;}
+.blog-featured:hover{box-shadow:0 8px 32px rgba(26,23,20,.1);transform:translateY(-2px);}
+.blog-featured-img{height:280px;background:linear-gradient(148deg,#163D2E 0%,#1C4A3A 45%,#2A6952 80%);position:relative;display:flex;align-items:flex-end;padding:24px;}
+.blog-featured-img::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(15,46,36,.7) 0%,transparent 60%);}
+.bf-category{position:relative;z-index:1;display:inline-flex;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:var(--forest-wash);color:var(--forest-deep);padding:4px 10px;border-radius:999px;margin-bottom:10px;}
+.bf-title{position:relative;z-index:1;font-family:var(--font-display);font-size:28px;font-weight:300;color:var(--white);line-height:1.15;}
+.bf-title em{font-style:italic;color:var(--forest-pale);}
+.blog-featured-body{padding:24px;}
+.bf-excerpt{font-size:15px;font-weight:300;color:var(--ink-soft);line-height:1.65;margin-bottom:16px;}
+.bf-meta{display:flex;align-items:center;justify-content:space-between;}
+.bf-author{font-size:12px;color:var(--ink-muted);}
+.bf-read{font-size:13px;font-weight:500;color:var(--forest);display:flex;align-items:center;gap:5px;transition:gap .15s;}
+.blog-featured:hover .bf-read{gap:9px;}
+.blog-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media(max-width:639px){.blog-grid{grid-template-columns:1fr;}}
+.blog-card{background:var(--white);border:1px solid var(--ink-ghost);border-radius:16px;overflow:hidden;transition:box-shadow .2s,transform .2s;}
+.blog-card:hover{box-shadow:0 6px 20px rgba(26,23,20,.09);transform:translateY(-2px);}
+.bc-img{height:160px;position:relative;}
+.bc-img-inner{position:absolute;inset:0;}
+.bc-body{padding:18px;}
+.bc-cat{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--forest-mid);background:var(--forest-ghost);padding:3px 8px;border-radius:999px;display:inline-block;margin-bottom:8px;}
+.bc-title{font-family:var(--font-display);font-size:20px;font-weight:400;color:var(--ink);line-height:1.2;margin-bottom:6px;}
+.bc-excerpt{font-size:13px;font-weight:300;color:var(--ink-muted);line-height:1.55;margin-bottom:12px;}
+.bc-meta{font-size:11px;color:var(--ink-muted);display:flex;align-items:center;justify-content:space-between;}
+.bc-read{font-size:12px;font-weight:500;color:var(--forest);}
+.sidebar-widget{background:var(--white);border:1px solid var(--ink-ghost);border-radius:16px;padding:22px;margin-bottom:20px;}
+.sw-title{font-family:var(--font-display);font-size:20px;font-weight:400;color:var(--ink);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--ink-ghost);}
+.sw-links{display:flex;flex-direction:column;gap:8px;}
+.sw-link{font-size:14px;color:var(--ink-soft);display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid rgba(0,0,0,.04);transition:color .15s;}
+.sw-link:last-child{border-bottom:none;}
+.sw-link:hover{color:var(--forest);}
+.sw-dot{width:6px;height:6px;border-radius:50%;background:var(--forest-pale);flex-shrink:0;}
+.cta-widget{background:var(--forest);border-radius:16px;padding:24px;}
+.cw-title{font-family:var(--font-display);font-size:20px;font-weight:300;color:var(--white);margin-bottom:6px;}
+.cw-title em{font-style:italic;color:var(--forest-pale);}
+.cw-desc{font-size:13px;font-weight:300;color:var(--forest-pale);margin-bottom:16px;line-height:1.5;}
+.cw-btn{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;background:var(--white);color:var(--forest-deep);font-size:13px;font-weight:500;padding:12px;border-radius:10px;transition:opacity .15s;}
+.cw-btn:hover{opacity:.9;}
+</style>
+</head>
+<body>
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <div class="hdr-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-main">Principe del Pacifico</span>
+        <span class="logo-sub">Playa Santa Teresa · Costa Rica</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html#apts" class="nl">Appartamenti</a>
+        <a href="../index.html#loc" class="nl">Posizione</a>
+        <a href="../index.html#rev" class="nl">Recensioni</a>
+        <a href="contatti.html" class="nl">Contatti</a>
+        <a href="../index.html#apts" class="ncta">Prenota ora</a>
+      </nav>
+      <button class="hamburger" id="ham" aria-label="Apri menu" onclick="toggleMobile()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-menu" id="mmenu" aria-hidden="true">
+  <a href="../index.html#apts" class="nm" onclick="closeMobile()">Appartamenti</a>
+  <a href="../index.html#loc" class="nm" onclick="closeMobile()">Posizione</a>
+  <a href="../index.html#rev" class="nm" onclick="closeMobile()">Recensioni</a>
+  <a href="contatti.html" class="nm" onclick="closeMobile()">Contatti</a>
+  <a href="../index.html#apts" class="nm ncta" onclick="closeMobile()">Prenota ora</a>
+</div>
+
+<div class="page-hero">
+  <div class="wrap">
+    <div class="page-hero-inner">
+      <div class="page-ey">Dal Pacifico con amore</div>
+      <h1 class="page-h1">Storie e consigli<br><em>da Santa Teresa</em></h1>
+      <p class="page-desc">Guide pratiche, consigli sui migliori spot e storie dal paradiso del surf costaricano.</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="blog-layout">
+
+    <div class="blog-main">
+
+      <a href="#" class="blog-featured">
+        <div class="blog-featured-img">
+          <div style="position:relative;z-index:1;">
+            <span class="bf-category">Guida pratica</span>
+            <h2 class="bf-title">Come arrivare a<br><em>Playa Santa Teresa</em></h2>
+          </div>
+        </div>
+        <div class="blog-featured-body">
+          <p class="bf-excerpt">Santa Teresa non è semplicissima da raggiungere — ed è esattamente per questo che è rimasta così autentica. Ti spieghiamo tutte le opzioni: aereo + ferry, aereo + auto a noleggio, shuttle privato da San José e dall'aeroporto di Tambor.</p>
+          <div class="bf-meta">
+            <span class="bf-author">Christian · Marzo 2026 · 8 min di lettura</span>
+            <span class="bf-read">Leggi <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
+      </a>
+
+      <div class="blog-grid">
+
+        <a href="#" class="blog-card">
+          <div class="bc-img"><div class="bc-img-inner" style="background:linear-gradient(148deg,#1C3A4A 0%,#2D5B6B 100%)"></div></div>
+          <div class="bc-body">
+            <span class="bc-cat">Surf</span>
+            <h3 class="bc-title">I migliori spot di surf vicino a noi</h3>
+            <p class="bc-excerpt">La Lora, Playa Carmen, Malpais — una guida ai break dell'area per tutti i livelli.</p>
+            <div class="bc-meta">
+              <span>Christian · Feb 2026</span>
+              <span class="bc-read">Leggi →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="blog-card">
+          <div class="bc-img"><div class="bc-img-inner" style="background:linear-gradient(148deg,#5C3628 0%,#8B4A35 100%)"></div></div>
+          <div class="bc-body">
+            <span class="bc-cat">Ristoranti</span>
+            <h3 class="bc-title">I nostri posti preferiti dove mangiare</h3>
+            <p class="bc-excerpt">Dalla colazione al tramonto — i ristoranti e i bar che frequentiamo davvero.</p>
+            <div class="bc-meta">
+              <span>Rossella · Feb 2026</span>
+              <span class="bc-read">Leggi →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="blog-card">
+          <div class="bc-img"><div class="bc-img-inner" style="background:linear-gradient(148deg,#234D3F 0%,#4A8C72 100%)"></div></div>
+          <div class="bc-body">
+            <span class="bc-cat">Natura</span>
+            <h3 class="bc-title">Tartarughe e natura nella penisola di Nicoya</h3>
+            <p class="bc-excerpt">Dove e quando avvistare le tartarughe marine. Le spiagge di nidificazione a meno di un'ora.</p>
+            <div class="bc-meta">
+              <span>Rossella · Gen 2026</span>
+              <span class="bc-read">Leggi →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="blog-card">
+          <div class="bc-img"><div class="bc-img-inner" style="background:linear-gradient(148deg,#3D2E1C 0%,#6B4F3A 100%)"></div></div>
+          <div class="bc-body">
+            <span class="bc-cat">Remote work</span>
+            <h3 class="bc-title">Lavorare da Santa Teresa: la guida completa</h3>
+            <p class="bc-excerpt">Internet, co-working, fuso orario, costo della vita. Tutto quello che serve sapere.</p>
+            <div class="bc-meta">
+              <span>Christian · Gen 2026</span>
+              <span class="bc-read">Leggi →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="blog-card">
+          <div class="bc-img"><div class="bc-img-inner" style="background:linear-gradient(148deg,#4A3828 0%,#7A5C42 100%)"></div></div>
+          <div class="bc-body">
+            <span class="bc-cat">Consigli pratici</span>
+            <h3 class="bc-title">Cosa portare a Santa Teresa</h3>
+            <p class="bc-excerpt">La lista definitiva di cosa mettere in valigia per una vacanza in Costa Rica.</p>
+            <div class="bc-meta">
+              <span>Rossella · Dic 2025</span>
+              <span class="bc-read">Leggi →</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" class="blog-card">
+          <div class="bc-img"><div class="bc-img-inner" style="background:linear-gradient(148deg,#1C4A3A 0%,#2D6B54 100%)"></div></div>
+          <div class="bc-body">
+            <span class="bc-cat">Stagioni</span>
+            <h3 class="bc-title">Quando venire: alta e bassa stagione</h3>
+            <p class="bc-excerpt">Piogge, temperatura, affollamento e prezzi mese per mese. Quando è il momento giusto per te.</p>
+            <div class="bc-meta">
+              <span>Christian · Nov 2025</span>
+              <span class="bc-read">Leggi →</span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <aside class="blog-sidebar">
+      <div class="cta-widget">
+        <div class="cw-title">Prenota il tuo<br><em>soggiorno</em></div>
+        <p class="cw-desc">7 appartamenti con piscina a 100m dalla spiaggia. Prezzi diretti garantiti.</p>
+        <a href="../index.html#apts" class="cw-btn">Vedi disponibilità →</a>
+      </div>
+
+      <div class="sidebar-widget" style="margin-top:20px;">
+        <div class="sw-title">Articoli recenti</div>
+        <div class="sw-links">
+          <a href="#" class="sw-link"><span class="sw-dot"></span>Come arrivare a Playa Santa Teresa</a>
+          <a href="#" class="sw-link"><span class="sw-dot"></span>I migliori spot di surf vicino a noi</a>
+          <a href="#" class="sw-link"><span class="sw-dot"></span>I nostri posti preferiti dove mangiare</a>
+          <a href="#" class="sw-link"><span class="sw-dot"></span>Tartarughe e natura nella penisola di Nicoya</a>
+          <a href="#" class="sw-link"><span class="sw-dot"></span>Lavorare da Santa Teresa: guida completa</a>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="sw-title">Categorie</div>
+        <div class="sw-links">
+          <a href="#" class="sw-link"><span class="sw-dot"></span>Guide pratiche</a>
+          <a href="#" class="sw-link"><span class="sw-dot"></span>Surf</a>
+          <a href="#" class="sw-link"><span class="sw-dot"></span>Ristoranti e cibo</a>
+          <a href="#" class="sw-link"><span class="sw-dot"></span>Natura e fauna</a>
+          <a href="#" class="sw-link"><span class="sw-dot"></span>Remote work</a>
+          <a href="#" class="sw-link"><span class="sw-dot"></span>Stagioni e clima</a>
+        </div>
+      </div>
+
+      <div class="sidebar-widget">
+        <div class="sw-title">Appartamenti</div>
+        <div class="sw-links">
+          <a href="master.html" class="sw-link"><span class="sw-dot"></span>Master — da $240/notte</a>
+          <a href="white.html" class="sw-link"><span class="sw-dot"></span>White — da $220/notte</a>
+          <a href="green.html" class="sw-link"><span class="sw-dot"></span>Green — da $190/notte</a>
+          <a href="red.html" class="sw-link"><span class="sw-dot"></span>Red — da $160/notte</a>
+          <a href="tora.html" class="sw-link"><span class="sw-dot"></span>Tora — da $160/notte</a>
+          <a href="brown.html" class="sw-link"><span class="sw-dot"></span>Brown — da $150/notte</a>
+          <a href="blue.html" class="sw-link"><span class="sw-dot"></span>Blue — da $140/notte</a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<footer class="footer" style="margin-top:80px;">
+  <div class="wrap">
+    <div class="fg">
+      <div class="footer-brand">
+        <span class="fb-name">Principe del Pacifico</span>
+        <span class="fb-loc">Playa Santa Teresa · Costa Rica</span>
+        <p class="fb-desc">Appartamenti con piscina a 100m dalla spiaggia. Prenotando direttamente hai il prezzo migliore garantito.</p>
+      </div>
+      <div>
+        <div class="fc-title">Appartamenti</div>
+        <nav class="fc-links">
+          <a href="master.html" class="fcl">Master</a>
+          <a href="white.html" class="fcl">White</a>
+          <a href="blue.html" class="fcl">Blue</a>
+          <a href="red.html" class="fcl">Red</a>
+          <a href="green.html" class="fcl">Green</a>
+          <a href="tora.html" class="fcl">Tora</a>
+          <a href="brown.html" class="fcl">Brown</a>
+        </nav>
+      </div>
+      <div>
+        <div class="fc-title">Info</div>
+        <nav class="fc-links">
+          <a href="../index.html#loc" class="fcl">Dove siamo</a>
+          <a href="../index.html#rev" class="fcl">Recensioni</a>
+          <a href="promozioni.html" class="fcl">Promozioni</a>
+          <a href="blog.html" class="fcl">Blog</a>
+          <a href="attivita.html" class="fcl">Attività</a>
+        </nav>
+      </div>
+      <div>
+        <div class="fc-title">Contatti</div>
+        <address class="fc-links">
+          <a href="mailto:reservation@principedelpacifico.com" class="fcl">reservation@principedelpacifico.com</a>
+          <a href="tel:+50687710567" class="fcl">+506 877 10567</a>
+          <a href="tel:+50626400345" class="fcl">+506 264 00345</a>
+        </address>
+      </div>
+    </div>
+    <div class="f-bot">
+      <p class="f-copy">© 2026 Principe del Pacifico. Tutti i diritti riservati.</p>
+      <div class="f-soc">
+        <a href="https://www.instagram.com/principedelpacifico" target="_blank" rel="noopener noreferrer" class="fs" aria-label="Instagram">ig</a>
+        <a href="https://www.facebook.com/principedelpacifico" target="_blank" rel="noopener noreferrer" class="fs" aria-label="Facebook">fb</a>
+        <a href="https://www.tripadvisor.com/principedelpacifico" target="_blank" rel="noopener noreferrer" class="fs" aria-label="TripAdvisor">ta</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>
