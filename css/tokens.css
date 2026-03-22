@@ -1,0 +1,115 @@
+/* ═══════════════════════════════════════════════════
+   PRINCIPE DEL PACIFICO — Design Tokens
+   css/tokens.css
+   Version: 1.0 — March 2026
+   ═══════════════════════════════════════════════════ */
+
+:root {
+
+  /* ── Color Palette ── */
+  --forest:       #1C4A3A;
+  --forest-deep:  #0F2E24;
+  --forest-mid:   #2D6B54;
+  --forest-soft:  #4A8C72;
+  --forest-pale:  #A8C9BB;
+  --forest-wash:  #E8F2EE;
+  --forest-ghost: #F2F8F5;
+
+  --sand:         #F5F0E8;
+  --sand-warm:    #EDE5D6;
+  --sand-deep:    #C8B99A;
+
+  --earth:        #6B4F3A;
+  --earth-light:  #C49A7A;
+  --earth-pale:   #F0E6DC;
+
+  --ink:          #1A1714;
+  --ink-mid:      #3D3730;
+  --ink-soft:     #6B6358;
+  --ink-muted:    #9A9188;
+  --ink-ghost:    #D4CFC8;
+
+  --white:        #FDFCFA;
+
+  /* ── Semantic Roles ── */
+  --primary:        var(--forest);
+  --primary-hover:  var(--forest-deep);
+  --accent:         var(--earth-light);
+  --surface:        var(--white);
+  --surface-alt:    var(--sand);
+  --border:         var(--ink-ghost);
+  --text-primary:   var(--ink);
+  --text-secondary: var(--ink-soft);
+  --text-muted:     var(--ink-muted);
+
+  /* ── Typography ── */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+  --font-mono:    'Courier New', monospace;
+
+  /* ── Type Scale ── */
+  --ts-xs:   11px;
+  --ts-sm:   13px;
+  --ts-base: 15px;
+  --ts-md:   17px;
+  --ts-lg:   20px;
+  --ts-xl:   24px;
+  --ts-2xl:  32px;
+  --ts-3xl:  44px;
+  --ts-4xl:  60px;
+  --ts-5xl:  80px;
+
+  /* ── Spacing Scale (base 4px) ── */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+  --sp-24: 96px;
+
+  /* ── Border Radius ── */
+  --r-sm:   4px;
+  --r-md:   8px;
+  --r-lg:   16px;
+  --r-xl:   20px;
+  --r-2xl:  24px;
+  --r-full: 9999px;
+
+  /* ── Shadows ── */
+  --shadow-xs: 0 1px 3px rgba(26,23,20,.06), 0 1px 2px rgba(26,23,20,.04);
+  --shadow-sm: 0 2px 8px rgba(26,23,20,.08), 0 1px 3px rgba(26,23,20,.05);
+  --shadow-md: 0 4px 16px rgba(26,23,20,.10), 0 2px 6px rgba(26,23,20,.06);
+  --shadow-lg: 0 8px 32px rgba(26,23,20,.12), 0 4px 12px rgba(26,23,20,.07);
+  --shadow-xl: 0 12px 40px rgba(26,23,20,.13), 0 6px 16px rgba(26,23,20,.08);
+  --shadow-hero: 0 20px 60px rgba(0,0,0,.26), 0 4px 16px rgba(0,0,0,.12);
+  --shadow-cta:  0 4px 14px rgba(28,74,58,.38);
+  --shadow-cta-hover: 0 8px 22px rgba(28,74,58,.42);
+  --shadow-focus: 0 0 0 3px rgba(28,74,58,.25);
+
+  /* ── Motion ── */
+  --ease-out:    cubic-bezier(.2,0,0,1);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+  --ease-in-out: cubic-bezier(.4,0,.2,1);
+  --dur-fast:    150ms;
+  --dur-base:    200ms;
+  --dur-slow:    300ms;
+  --dur-page:    500ms;
+
+  /* ── Layout ── */
+  --container-max: 1100px;
+  --container-pad-mobile: 20px;
+  --container-pad-tablet: 32px;
+  --container-pad-desktop: 80px;
+  --header-height: 58px;
+
+  /* ── Beds24 Integration ── */
+  /* enquireid per appartamento — usati da js/booking.js */
+  --beds24-propid: 187661;
+  --beds24-base: "https://beds24.com/book-principedelpacifico";
+}

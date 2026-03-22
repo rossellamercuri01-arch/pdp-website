@@ -1,0 +1,254 @@
+/* ═══════════════════════════════════════════════════
+   PRINCIPE DEL PACIFICO — Apartment Cards
+   css/cards.css
+   ═══════════════════════════════════════════════════ */
+
+/* ── Grid ── */
+.apt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: var(--sp-12);
+}
+
+/* FIX: explicit breakpoint to avoid layout break at exactly 1024px */
+@media (max-width: 1024px) {
+  .apt-grid { grid-template-columns: repeat(2, 1fr); }
+  .apt-featured { grid-column: span 1 !important; }
+  .apt-featured .apt-img { height: 220px !important; }
+  .apt-featured .apt-lbg { font-size: 72px !important; }
+}
+
+@media (max-width: 639px) {
+  .apt-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Card ── */
+.apt-card {
+  background: var(--white);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  border: 1px solid var(--ink-ghost);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .25s var(--ease-out),
+              transform .25s var(--ease-spring);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.apt-card.vis {
+  animation: fadeUp .6s var(--ease-out) forwards;
+}
+
+/* Staggered animation delays */
+.apt-card:nth-child(1).vis { animation-delay: 0ms; }
+.apt-card:nth-child(2).vis { animation-delay: 70ms; }
+.apt-card:nth-child(3).vis { animation-delay: 140ms; }
+.apt-card:nth-child(4).vis { animation-delay: 210ms; }
+.apt-card:nth-child(5).vis { animation-delay: 280ms; }
+.apt-card:nth-child(6).vis { animation-delay: 350ms; }
+.apt-card:nth-child(7).vis { animation-delay: 420ms; }
+
+.apt-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+}
+
+/* ── Featured (Master — spans 2 columns) ── */
+.apt-featured {
+  grid-column: span 2;
+}
+
+.apt-featured .apt-img { height: 280px; }
+.apt-featured .apt-lbg { font-size: 100px; }
+
+/* ── Card image ── */
+.apt-img {
+  height: 210px;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.apt-img-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .5s var(--ease-out);
+}
+
+.apt-card:hover .apt-img-inner { transform: scale(1.04); }
+
+/* Real photo — uncomment when photos are ready */
+img.real-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TODO badge — visible during dev, remove before launch */
+.apt-img-todo {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, .55);
+  color: rgba(255, 255, 255, .75);
+  font-size: 10px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 5px;
+  letter-spacing: .04em;
+  pointer-events: none;
+  font-family: var(--font-body);
+  z-index: 2;
+}
+
+/* Large watermark name (placeholder aesthetic) */
+.apt-lbg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 68px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, .13);
+  font-style: italic;
+  letter-spacing: -.03em;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Gradient overlay for text readability */
+.apt-ov {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 46, 36, .48) 0%, transparent 58%);
+}
+
+/* ── Apartment gradient backgrounds ── */
+.bg-master    { background: linear-gradient(148deg, #163D2E 0%, #1C4A3A 45%, #2A6952 80%, #3D8C6A 100%); }
+.bg-white-apt { background: linear-gradient(148deg, #4A8C72 0%, #2D6B54 50%, #1C4A3A 100%); }
+.bg-green     { background: linear-gradient(148deg, #234D3F 0%, #2D6B54 55%, #4A8C72 100%); }
+.bg-red       { background: linear-gradient(148deg, #5C3628 0%, #8B4A35 50%, #C49A7A 100%); }
+.bg-blue      { background: linear-gradient(148deg, #1C3A4A 0%, #2D5B6B 50%, #4A8C9A 100%); }
+.bg-tora      { background: linear-gradient(148deg, #3D2E1C 0%, #6B4F3A 55%, #C49A7A 100%); }
+.bg-brown     { background: linear-gradient(148deg, #4A3828 0%, #7A5C42 55%, #B08060 100%); }
+
+/* ── Badge ── */
+.apt-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--r-full);
+}
+
+.badge-forest { background: rgba(232, 242, 238, .95); color: var(--forest-deep); }
+.badge-earth  { background: rgba(240, 230, 220, .95); color: var(--earth); }
+.badge-sand   { background: rgba(245, 240, 232, .95); color: var(--ink-mid); }
+
+/* ── Card body ── */
+.apt-body {
+  padding: 20px 22px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 8px;
+}
+
+.apt-name {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -.01em;
+}
+
+.apt-diff {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--forest-mid);
+  letter-spacing: .02em;
+}
+
+.apt-specs {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+/* ── Card footer ── */
+.apt-foot {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0, 0, 0, .05);
+  margin-top: auto;
+}
+
+.apt-price-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+/* FIX: min 11px (was 9px) */
+.apt-pfrom {
+  font-size: var(--ts-xs);
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--ink-muted);
+  font-weight: 400;
+}
+
+.apt-price {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+
+.apt-per {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--ink-muted);
+  letter-spacing: 0;
+}
+
+.apt-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--forest);
+  transition: gap var(--dur-base) var(--ease-spring);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.apt-card:hover .apt-link { gap: 9px; }
