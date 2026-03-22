@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master Apartment — Principe del Pacifico · Playa Santa Teresa</title>
+<meta name="description" content="Il nostro appartamento più grande: 140 mq, duplex su 2 piani, 2 bagni completi, ingresso indipendente, grande balcone privato. 5 ospiti. Da $240/notte.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="../css/detail.css">
+<link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <div class="hdr-inner">
+      <a href="../index.html" class="logo">
+        <span class="logo-main">Principe del Pacifico</span>
+        <span class="logo-sub">Playa Santa Teresa · Costa Rica</span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html#apts" class="nl">Appartamenti</a>
+        <a href="../index.html#loc" class="nl">Posizione</a>
+        <a href="../index.html#rev" class="nl">Recensioni</a>
+        <a href="../index.html#owners" class="nl">Contatti</a>
+        <button class="ncta" onclick="bookNow()">Prenota ora</button>
+      </nav>
+      <button class="hamburger" id="ham" aria-label="Apri menu" onclick="toggleMobile()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mmenu" aria-hidden="true">
+  <a href="../index.html#apts" class="nm" onclick="closeMobile()">Appartamenti</a>
+  <a href="../index.html#loc" class="nm" onclick="closeMobile()">Posizione</a>
+  <a href="../index.html#rev" class="nm" onclick="closeMobile()">Recensioni</a>
+  <a href="../index.html#owners" class="nm" onclick="closeMobile()">Contatti</a>
+  <button class="nm ncta" onclick="bookNow();closeMobile()">Prenota ora</button>
+</div>
+
+<div class="wrap">
+
+  <!-- BREADCRUMB -->
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="breadcrumb-sep">›</span>
+    <a href="../index.html#apts">Appartamenti</a>
+    <span class="breadcrumb-sep">›</span>
+    <span>Master</span>
+  </nav>
+
+  <!-- GALLERY -->
+  <div class="gallery" id="gallery-top">
+    <div class="gallery-main">
+      <!--
+        TODO: sostituire con foto reale prima del lancio.
+        <img src="../img/apt/master-1.jpg" alt="Master — soggiorno open space su due livelli" loading="eager">
+      -->
+      <div class="gallery-placeholder">Foto principale · Master</div>
+      <span class="gallery-todo">📷 Foto da aggiungere</span>
+    </div>
+    <div class="gallery-thumb">
+      <!-- TODO: <img src="../img/apt/master-2.jpg" alt="Master — camera da letto con letto king" loading="lazy"> -->
+      <div class="gallery-placeholder">Camera da letto</div>
+    </div>
+    <div class="gallery-thumb">
+      <!-- TODO: <img src="../img/apt/master-3.jpg" alt="Master — grande balcone privato" loading="lazy"> -->
+      <div class="gallery-placeholder">Balcone privato</div>
+      <button class="gallery-count" onclick="openGallery()">📷 Vedi tutte le foto</button>
+    </div>
+  </div>
+
+  <!-- MAIN LAYOUT -->
+  <div class="detail-layout">
+
+    <!-- LEFT: content -->
+    <main class="content-left">
+
+      <header class="apt-header">
+        <div class="apt-eyebrow">Top di gamma · Secondo piano</div>
+        <h1 class="apt-name">Master</h1>
+        <p class="apt-tagline">Duplex su due piani con ingresso indipendente.<br>L'unico appartamento con 2 bagni completi.</p>
+        <div class="apt-badges">
+          <span class="badge badge-sand">140 mq</span>
+          <span class="badge badge-sand">5 ospiti</span>
+          <span class="badge badge-sand">2 bagni</span>
+          <span class="badge badge-sand">Duplex 2 piani</span>
+          <span class="badge badge-sand">Ingresso indipendente</span>
+        </div>
+      </header>
+
+      <!-- Quick specs -->
+      <div class="specs-bar">
+        <div class="spec-item">
+          <span class="spec-label">Superficie</span>
+          <span class="spec-val">140 mq</span>
+          <span class="spec-sub">1507 sq ft</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Ospiti</span>
+          <span class="spec-val">4–5</span>
+          <span class="spec-sub">4 std / 5 max</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Letti</span>
+          <span class="spec-val">3 letti</span>
+          <span class="spec-sub">1 King + 2 Queen</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Bagni</span>
+          <span class="spec-val">2 bagni</span>
+          <span class="spec-sub">Entrambi completi</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Esterno</span>
+          <span class="spec-val">Balcone</span>
+          <span class="spec-sub">Grande · privato</span>
+        </div>
+      </div>
+
+      <!-- Why Master -->
+      <section class="content-section">
+        <h2 class="cs-title">Perché scegliere il Master</h2>
+        <div class="highlights">
+          <div class="hl">
+            <div class="hl-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div>
+              <div class="hl-title">Unico con 2 bagni completi</div>
+              <div class="hl-desc">Perfetto per famiglie o gruppi — nessun turno in bagno</div>
+            </div>
+          </div>
+          <div class="hl">
+            <div class="hl-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            </div>
+            <div>
+              <div class="hl-title">Ingresso indipendente</div>
+              <div class="hl-desc">Privacy totale — come avere il proprio appartamento</div>
+            </div>
+          </div>
+          <div class="hl">
+            <div class="hl-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            </div>
+            <div>
+              <div class="hl-title">Duplex su 2 piani</div>
+              <div class="hl-desc">Zona giorno al piano terra, camere al piano superiore</div>
+            </div>
+          </div>
+          <div class="hl">
+            <div class="hl-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7"/><path d="M9 22V12h6v10"/></svg>
+            </div>
+            <div>
+              <div class="hl-title">Grande balcone privato</div>
+              <div class="hl-desc">Colazione all'aperto con vista sulla vegetazione tropicale</div>
+            </div>
+          </div>
+          <div class="hl">
+            <div class="hl-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z"/></svg>
+            </div>
+            <div>
+              <div class="hl-title">140 mq — il più spazioso</div>
+              <div class="hl-desc">Il grande appartamento della struttura</div>
+            </div>
+          </div>
+          <div class="hl">
+            <div class="hl-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <div class="hl-title">Fibra 100MB dedicata</div>
+              <div class="hl-desc">Router esclusivo — ideale per remote workers</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Description -->
+      <section class="content-section">
+        <h2 class="cs-title">L'appartamento</h2>
+        <p class="desc-text">Il Master è l'appartamento più grande e riservato di Principe del Pacifico. Sviluppato su due piani con ingresso indipendente, offre la stessa intimità di una casa privata immersa in un contesto con piscina e servizi inclusi.</p>
+        <p class="desc-text" style="margin-top:14px;">Al piano terra si trovano il soggiorno open space e la cucina completamente attrezzata. Le camere da letto occupano il piano superiore, con accesso al grande balcone privato — perfetto per la colazione con vista sulla vegetazione tropicale. I due bagni completi lo rendono ideale per famiglie con bambini o gruppi di 4–5 persone.</p>
+        <p class="desc-text" style="margin-top:14px;">A 100 metri dalla spiaggia di Playa Santa Teresa e dal surf spot La Lora. Ristoranti, bar e negozi a piedi — auto non necessaria.</p>
+      </section>
+
+      <!-- Amenities -->
+      <section class="content-section">
+        <h2 class="cs-title">Dotazioni</h2>
+        <div class="amenities">
+          <div class="am"><svg class="am-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><span class="am-text">Fibra ottica 100MB</span></div>
+          <div class="am"><svg class="am-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/></svg><span class="am-text">Cucina completa attrezzata</span></div>
+          <div class="am"><svg class="am-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span class="am-text">TV via cavo</span></div>
+          <div class="am"><svg class="am-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg><span class="am-text">Cassaforte</span></div>
+          <div class="am"><svg class="am-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg><span class="am-text">Ventilatori a soffitto</span></div>
+          <div class="am"><svg class="am-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span class="am-text">Piscina condivisa</span></div>
+          <div class="am"><svg class="am-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg><span class="am-text">Pulizia giornaliera 6gg/sett</span></div>
+          <div class="am"><svg class="am-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/></svg><span class="am-text">Lavanderia su richiesta</span></div>
+          <div class="am"><svg class="am-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h5l2 3v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span class="am-text">Parcheggio gratuito incluso</span></div>
+        </div>
+      </section>
+
+      <!-- Policies -->
+      <section class="content-section">
+        <h2 class="cs-title">Politiche</h2>
+        <div class="policies-grid">
+          <div class="pol"><span class="pol-label">Check-in</span><span class="pol-val">Dalle 14:00</span><span class="pol-sub">Entro le 23:30 · Età min. 18 anni</span></div>
+          <div class="pol"><span class="pol-label">Check-out</span><span class="pol-val">Entro le 11:00</span><span class="pol-sub">Contactless disponibile</span></div>
+          <div class="pol"><span class="pol-label">Minimum stay</span><span class="pol-val">1 notte</span><span class="pol-sub">Nessun vincolo minimo</span></div>
+          <div class="pol"><span class="pol-label">Cancellazione</span><span class="pol-val">Parzialmente rimborsabile</span><span class="pol-sub">Contattare per dettagli</span></div>
+          <div class="pol"><span class="pol-label">Animali</span><span class="pol-val">Non ammessi</span><span class="pol-sub">Service animals benvenuti</span></div>
+          <div class="pol"><span class="pol-label">Bambini</span><span class="pol-val">Benvenuti</span><span class="pol-sub">Culla gratuita su richiesta</span></div>
+        </div>
+      </section>
+
+      <!-- Reviews -->
+      <section class="content-section">
+        <h2 class="cs-title">Recensioni ospiti</h2>
+        <div class="rev-card">
+          <div class="rev-stars">
+            <svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          </div>
+          <blockquote class="rev-text">"The owners were super helpful and responsive. It truly felt like my own apartment after a couple days."</blockquote>
+          <div class="rev-footer"><div><div class="rev-name">Courtney Parker</div><div class="rev-meta">Solo · 2 settimane · Feb 2026</div></div><span class="rev-src">Google</span></div>
+        </div>
+        <div class="rev-card">
+          <div class="rev-stars">
+            <svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg class="rev-star" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          </div>
+          <blockquote class="rev-text">"Christian helped us feeling welcome and at home. He knows Santa Teresa very well — ask him for some hidden gems!"</blockquote>
+          <div class="rev-footer"><div><div class="rev-name">Koray</div><div class="rev-meta">Coppia · Gen 2026</div></div><span class="rev-src">Google</span></div>
+        </div>
+      </section>
+
+      <!-- Other apartments -->
+      <section class="content-section">
+        <h2 class="cs-title">Altri appartamenti</h2>
+        <div class="other-grid">
+          <a href="white.html" class="other-card"><div class="other-img"><div class="other-img-inner" style="background:linear-gradient(148deg,#4A8C72 0%,#2D6B54 100%)"></div></div><div class="other-body"><div class="other-name">White</div><div class="other-diff">Piano terra · piscina</div><div class="other-price">da <strong>$220</strong>/notte</div></div></a>
+          <a href="blue.html" class="other-card"><div class="other-img"><div class="other-img-inner" style="background:linear-gradient(148deg,#1C3A4A 0%,#2D5B6B 100%)"></div></div><div class="other-body"><div class="other-name">Blue</div><div class="other-diff">Accessibile · studio</div><div class="other-price">da <strong>$140</strong>/notte</div></div></a>
+          <a href="green.html" class="other-card"><div class="other-img"><div class="other-img-inner" style="background:linear-gradient(148deg,#234D3F 0%,#4A8C72 100%)"></div></div><div class="other-body"><div class="other-name">Green</div><div class="other-diff">Loft duplex · 4 ospiti</div><div class="other-price">da <strong>$190</strong>/notte</div></div></a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- RIGHT: booking sidebar -->
+    <aside class="sidebar" aria-label="Prenotazione">
+      <div class="booking-card">
+        <div class="bc-header">
+          <div class="bc-eyebrow">Prenota direttamente</div>
+          <div class="bc-price">$240<span class="bc-price-per">/notte</span></div>
+          <div class="bc-price-note">✓ Miglior prezzo garantito — meno di Expedia ($264)</div>
+        </div>
+        <div class="bc-body">
+          <div class="bc-fields">
+            <div class="bc-row2">
+              <div class="bc-field" id="bc-ci">
+                <label class="bc-label" for="bci">Check-in</label>
+                <input class="bc-input" id="bci" type="date" aria-label="Data check-in">
+              </div>
+              <div class="bc-field" id="bc-co">
+                <label class="bc-label" for="bco">Check-out</label>
+                <input class="bc-input" id="bco" type="date" aria-label="Data check-out">
+              </div>
+            </div>
+            <div class="bc-field">
+              <label class="bc-label" for="bgu">Ospiti</label>
+              <select class="bc-input" id="bgu">
+                <option value="1">1 ospite</option>
+                <option value="2" selected>2 ospiti</option>
+                <option value="3">3 ospiti</option>
+                <option value="4">4 ospiti</option>
+                <option value="5">5 ospiti (max)</option>
+              </select>
+            </div>
+          </div>
+          <div class="bc-total" id="bc-total">
+            <div class="bc-total-row"><span id="bc-nights-label">Seleziona le date</span><span id="bc-nights-val"></span></div>
+            <div class="bc-total-row bold"><span>Totale stimato</span><span id="bc-total-val">—</span></div>
+          </div>
+          <button class="bc-btn" onclick="bookNow()" aria-label="Prenota Master su Beds24">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3v12"/></svg>
+            Prenota ora su Beds24
+          </button>
+          <div class="bc-guarantee">Nessuna commissione — prezzo diretto</div>
+          <div class="bc-sep"></div>
+          <div class="value-pills">
+            <div class="vp"><svg class="vp-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><span class="vp-text"><strong>$24/notte meno</strong> di Expedia</span></div>
+            <div class="vp"><svg class="vp-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span class="vp-text">Rispondono Christian e Rossella <strong>direttamente</strong></span></div>
+            <div class="vp"><svg class="vp-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h5l2 3v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg><span class="vp-text">Parcheggio gratuito <strong>incluso</strong></span></div>
+          </div>
+          <div class="bc-sep"></div>
+          <address class="bc-contact">
+            <div class="bc-contact-title">Hai domande?</div>
+            <a href="mailto:reservation@principedelpacifico.com" class="bc-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              reservation@principedelpacifico.com
+            </a>
+            <a href="tel:+50687710567" class="bc-contact-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
+              +506 877 10567
+            </a>
+          </address>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<!-- MOBILE BOOKING BAR -->
+<div class="mob-book" id="mob-book" role="region" aria-label="Prenota">
+  <div class="mob-price">
+    <span class="mob-price-label">Master Apartment</span>
+    <span class="mob-price-val">$240<span style="font-size:13px;font-weight:300;color:rgba(255,255,255,.55)">/notte</span></span>
+  </div>
+  <button class="mob-btn" onclick="bookNow()">Prenota ora →</button>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" style="margin-top:80px;">
+  <div class="wrap">
+    <div class="fg">
+      <div class="footer-brand">
+        <span class="fb-name">Principe del Pacifico</span>
+        <span class="fb-loc">Playa Santa Teresa · Costa Rica</span>
+        <p class="fb-desc">Appartamenti con piscina a 100m dalla spiaggia. Prenotando direttamente hai il prezzo migliore garantito.</p>
+      </div>
+      <div>
+        <div class="fc-title">Appartamenti</div>
+        <nav class="fc-links">
+          <a href="master.html" class="fcl" style="color:rgba(255,255,255,.8);font-weight:500;">Master</a>
+          <a href="white.html" class="fcl">White</a>
+          <a href="blue.html" class="fcl">Blue</a>
+          <a href="red.html" class="fcl">Red</a>
+          <a href="green.html" class="fcl">Green</a>
+          <a href="tora.html" class="fcl">Tora</a>
+          <a href="brown.html" class="fcl">Brown</a>
+        </nav>
+      </div>
+      <div>
+        <div class="fc-title">Info</div>
+        <nav class="fc-links">
+          <a href="../index.html#loc" class="fcl">Dove siamo</a>
+          <a href="../index.html#rev" class="fcl">Recensioni</a>
+          <a href="../index.html" class="fcl">Homepage</a>
+        </nav>
+      </div>
+      <div>
+        <div class="fc-title">Contatti</div>
+        <address class="fc-links">
+          <a href="mailto:reservation@principedelpacifico.com" class="fcl">reservation@principedelpacifico.com</a>
+          <a href="tel:+50687710567" class="fcl">+506 877 10567</a>
+          <a href="tel:+50626400345" class="fcl">+506 264 00345</a>
+        </address>
+      </div>
+    </div>
+    <div class="f-bot">
+      <p class="f-copy">© 2026 Principe del Pacifico. Tutti i diritti riservati.</p>
+      <div class="f-soc">
+        <a href="https://www.instagram.com/principedelpacifico" target="_blank" rel="noopener noreferrer" class="fs" aria-label="Instagram">ig</a>
+        <a href="https://www.facebook.com/principedelpacifico" target="_blank" rel="noopener noreferrer" class="fs" aria-label="Facebook">fb</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script src="../js/booking.js"></script>
+<script>
+// ── Apartment-specific config ──────────────────
+const APT_ID    = 'master';  // maps to enquireid 405247 in booking.js
+const APT_PRICE = 240;       // base price per night USD
+
+// ── Pre-fill dates from URL params ─────────────
+const p = new URLSearchParams(window.location.search);
+const bci = document.getElementById('bci');
+const bco = document.getElementById('bco');
+const today = new Date().toISOString().split('T')[0];
+bci.min = today; bco.min = today;
+if(p.get('checkin'))  bci.value = p.get('checkin');
+if(p.get('checkout')) bco.value = p.get('checkout');
+if(p.get('guests'))   document.getElementById('bgu').value = p.get('guests');
+updateTotal();
+
+// ── Date change handlers ───────────────────────
+bci.addEventListener('change', () => {
+  bco.min = bci.value;
+  if(bco.value && bco.value <= bci.value) bco.value = '';
+  document.getElementById('bc-ci').classList.remove('err');
+  updateTotal();
+});
+bco.addEventListener('change', () => {
+  document.getElementById('bc-co').classList.remove('err');
+  updateTotal();
+});
+
+function updateTotal() {
+  const ci = bci.value, co = bco.value;
+  const tot = document.getElementById('bc-total');
+  if(!ci || !co) {
+    document.getElementById('bc-nights-label').textContent = 'Seleziona le date per il totale';
+    document.getElementById('bc-nights-val').textContent = '';
+    document.getElementById('bc-total-val').textContent = '—';
+    return;
+  }
+  const nights = Math.round((new Date(co) - new Date(ci)) / 86400000);
+  if(nights <= 0) return;
+  document.getElementById('bc-nights-label').textContent = `${nights} nott${nights===1?'e':'i'} × $${APT_PRICE}`;
+  document.getElementById('bc-nights-val').textContent = `$${nights * APT_PRICE}`;
+  document.getElementById('bc-total-val').textContent = `$${nights * APT_PRICE}`;
+}
+
+// ── Book now — opens Beds24 with params ────────
+function bookNow() {
+  const ci = bci.value, co = bco.value;
+  const gu = document.getElementById('bgu').value;
+  let err = false;
+  if(!ci){ document.getElementById('bc-ci').classList.add('err'); err=true; }
+  if(!co){ document.getElementById('bc-co').classList.add('err'); err=true; }
+  if(err) {
+    document.getElementById('bc-ci').scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+  // Uses bookNow() from booking.js
+  const url = buildBookingUrl({
+    apartmentId: APT_ID,
+    checkin: ci,
+    checkout: co,
+    adults: parseInt(gu),
+    children: 0
+  });
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
+
+// ── Mobile bar visibility ──────────────────────
+const mobBook = document.getElementById('mob-book');
+const galleryEl = document.getElementById('gallery-top');
+const mobObs = new IntersectionObserver(
+  ([e]) => mobBook.classList.toggle('show', !e.isIntersecting),
+  {threshold: 0}
+);
+mobObs.observe(galleryEl);
+
+function openGallery() {
+  // TODO: implementare lightbox galleria completa
+  alert('Galleria completa — da implementare con lightbox prima del lancio.');
+}
+</script>
+</body>
+</html>
