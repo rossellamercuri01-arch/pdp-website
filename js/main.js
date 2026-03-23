@@ -5,7 +5,119 @@
  */
 
 /* ══════════════════════════════════════════════
-   HEADER — scroll state
+   HEADER — scroll state/**
+ * PRINCIPE DEL PACIFICO — Main JS
+ * js/main.js  |  Version 2.0 — March 2026
+ *
+ * Shared across all pages (EN + IT).
+ * Page-specific logic (search redirect, booking) lives in inline <script> per page.
+ */
+
+/* ══════════════════════════════════════════════
+   HEADER — scroll state toggle
+══════════════════════════════════════════════ */
+const hdr = document.getElementById('hdr');
+if (hdr) {
+  window.addEventListener('scroll', () => {
+    hdr.classList.toggle('on', window.scrollY > 60);
+  }, { passive: true });
+}
+
+/* ══════════════════════════════════════════════
+   MOBILE MENU DRAWER
+══════════════════════════════════════════════ */
+const mmenu = document.getElementById('mmenu');
+const ham   = document.getElementById('ham');
+let menuOpen = false;
+
+function toggleMobile() { menuOpen ? closeMobile() : openMobile(); }
+
+function openMobile() {
+  menuOpen = true;
+  mmenu.style.display = 'flex';
+  requestAnimationFrame(() => mmenu.classList.add('open'));
+  ham.classList.add('open');
+  ham.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+  mmenu.setAttribute('aria-hidden', 'false');
+}
+
+function closeMobile() {
+  menuOpen = false;
+  mmenu.classList.remove('open');
+  ham.classList.remove('open');
+  ham.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+  mmenu.setAttribute('aria-hidden', 'true');
+  setTimeout(() => { if (!menuOpen) mmenu.style.display = 'none'; }, 260);
+}
+
+// Close on ESC
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && menuOpen) closeMobile(); });
+
+// Close on backdrop click
+if (mmenu) {
+  mmenu.addEventListener('click', e => { if (e.target === mmenu) closeMobile(); });
+}
+
+/* ══════════════════════════════════════════════
+   SEARCH WIDGET — date validation
+══════════════════════════════════════════════ */
+const ciEl = document.getElementById('ci');
+const coEl = document.getElementById('co');
+
+if (ciEl && coEl) {
+  const today = new Date().toISOString().split('T')[0];
+  ciEl.min = today;
+  coEl.min = today;
+
+  // Pre-fill from URL params (returning from listing)
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('checkin'))  ciEl.value = params.get('checkin');
+  if (params.get('checkout')) coEl.value = params.get('checkout');
+  if (params.get('guests')) {
+    const guEl = document.getElementById('gu');
+    if (guEl) guEl.value = params.get('guests');
+  }
+
+  ciEl.addEventListener('change', () => {
+    coEl.min = ciEl.value;
+    if (coEl.value && coEl.value <= ciEl.value) coEl.value = '';
+    document.getElementById('sf-ci')?.classList.remove('err');
+  });
+
+  coEl.addEventListener('change', () => {
+    document.getElementById('sf-co')?.classList.remove('err');
+  });
+}
+
+/* ══════════════════════════════════════════════
+   MOBILE STICKY CTA — appears after hero scrolls out
+══════════════════════════════════════════════ */
+const mobCta = document.getElementById('mob-cta');
+const heroEl = document.querySelector('.hero');
+
+if (mobCta && heroEl) {
+  new IntersectionObserver(
+    ([entry]) => mobCta.classList.toggle('show', !entry.isIntersecting),
+    { threshold: 0 }
+  ).observe(heroEl);
+}
+
+/* ══════════════════════════════════════════════
+   SCROLL ANIMATIONS — apartment & review cards
+══════════════════════════════════════════════ */
+const animObs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('vis');
+      animObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+document.querySelectorAll('.apt-card, .rev-card').forEach(el => animObs.observe(el));
+
 ══════════════════════════════════════════════ */
 const hdr = document.getElementById('hdr');
 if (hdr) {
